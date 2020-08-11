@@ -2,4 +2,4 @@
 
 ## Sobre
 
-Este projeto foi recriado com base no layout do Tiago Luchtenberg.
+Este projeto está sendo recriado com base no layout do Tiago Luchtenberg.
