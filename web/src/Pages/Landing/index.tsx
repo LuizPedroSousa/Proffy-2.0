@@ -26,14 +26,19 @@ function Landing() {
                     <a href="#" className="buttonPower"><span><i className="fas fa-power-off"></i></span></a>
                 </header>
                 <div className="logo-container">
-                    <img src={logoImage} alt="logo" />
-                    <h2>Sua plataforma de estudos online</h2>
+                    <div className="logo-content">
+                        <img src={logoImage} alt="logo" />
+                        <h2>Sua plataforma de estudos online</h2>
+                    </div>
+                    <img className="hero-image" src={hero} alt="hero" />
                 </div>
-                <img className="hero-image" src={hero} alt="hero" />
             </div>
-            <section className="Semifooter">
-                <h2>Seja bem-vindo !</h2>
-                <strong>O que você deseja fazer ?</strong>
+
+            <section className="semi-footer">
+                <div className="text-content">
+                    <h2>Seja bem-vindo !</h2>
+                    <strong>O que você deseja fazer ?</strong>
+                </div>
                 <div className="buttons-container">
                     <a href="#" className="study">
                         <img src={studyImage} alt="Estudar" />
@@ -47,11 +52,13 @@ function Landing() {
                         <p>Dar Aulas</p>
                     </a>
                 </div>
+                <div className="connections">
+                    <p>
+                        Total de 285 conexôes
+                    </p>
+                    <span> já realizadas <i className="far fa-heart"></i></span>
+                </div>
             </section>
-            <footer>
-                <p>Total de 285 conexôes já realizadas</p>
-                <span><i className="far fa-heart"></i></span>
-            </footer>
         </div>
     );
 }

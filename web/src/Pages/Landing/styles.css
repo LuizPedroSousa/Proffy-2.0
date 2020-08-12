@@ -52,11 +52,11 @@
     margin-top: 1rem;
 }
 
-.logo-container > img{
+.logo-content > img{
     width: 100%;
 }
 
-.logo-container > h2{
+.logo-content > h2{
     font: 400 2.8rem Poppins;
     color: var(--color-text-in-primary);
 }
@@ -65,20 +65,26 @@
     width: 100%;
 }
 
-.Semifooter{
+.semi-footer{
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.Semifooter > h2 {
+.text-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-content > h2{
     font-size: 2rem;
 }
 
-.Semifooter > strong{
-    font-size: 1.8rem;
+.text-content > strong {
+    font-size: 1.6rem;
 }
-
 
 .buttons-container{
     display: flex;
@@ -88,13 +94,13 @@
 }
 
 .buttons-container a {
-    max-width: 48%;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-radius: 0.8rem;
+    max-width: 48%;
 }
 
 .buttons-container a > p{
@@ -124,7 +130,7 @@
     background-color: var(--color-secondary-dark);
 }
 
-.page-landing footer{
+.connections{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,6 +138,78 @@
     margin-bottom: 1rem;
 }
 
+.connections p{
+    margin-right: 1rem;
+}
+
 .page-landing footer p{
     margin-right: 1rem;
+}
+
+@media(min-width: 1100px){
+    #header-container {
+        max-width: 116rem;
+        margin: 0 auto;
+    }
+
+    .logo-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        max-width: 140rem;
+        margin: 0 auto;
+        margin-bottom: 6rem;
+        
+    }
+
+    .logo-container > img{
+        margin-top: 5rem;
+        width: 50rem;
+    }
+
+    .logo-content img{
+        width: 35rem;
+    }
+
+    .logo-content h2{
+        display: block;
+        max-width: 35rem;
+    }
+
+    .semi-footer{
+        margin-top: 6rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .text-content{
+        display: block;
+        margin-left: 10rem;
+    }
+
+    .buttons-container{
+        justify-content: space-around;
+    }
+    
+    .buttons-container a{
+        max-width: 45%;
+        width: 30.1rem;
+        height: 10.4rem;
+        flex-direction: row;
+    }
+
+    .buttons-container p{
+        margin: 3rem;
+    }
+
+    .connections{
+        display: block;
+        max-width: 20rem;
+    }
+    .connections span{
+        position: relative;
+        right: -6rem;
+    }
 }
