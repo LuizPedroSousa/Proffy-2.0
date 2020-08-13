@@ -1,0 +1,38 @@
+import React from 'react';
+
+import './style.css';
+
+import backIcon from '../../Assets/Icons/back.svg';
+import logoImage from '../../Assets/Images/logo.svg';
+
+interface PageHeaderProps {
+    navTitle: string;
+    title: string;
+    description?: string;
+}
+
+const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
+    return (
+        <header className="header-container">
+            <nav className="menu-content">
+                <div className="menu">
+                    <img src={backIcon} alt="Voltar" />
+                    <h1>{props.navTitle}</h1>
+                    <img src={logoImage} alt="Proffy" />
+                </div>
+            </nav>
+            <div className="content-container">
+                <div className="content">
+                    <div className="title">
+                        <h2>{props.title}</h2>
+                    </div>
+                    <div className="childrens">
+                        {props.children}
+                    </div>
+                </div>
+            </div>
+        </header>
+    );
+}
+
+export default PageHeader;

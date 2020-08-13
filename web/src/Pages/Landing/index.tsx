@@ -10,6 +10,7 @@ import studyImage from '../../Assets/Icons/study.svg';
 import giveClassesImage from '../../Assets/Icons/give-classes.svg';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function Landing() {
     return (
@@ -40,10 +41,10 @@ function Landing() {
                     <strong>O que você deseja fazer ?</strong>
                 </div>
                 <div className="buttons-container">
-                    <a href="#" className="study">
+                    <Link to="/study" className="study">
                         <img src={studyImage} alt="Estudar" />
                         <p>Estudar</p>
-                    </a>
+                    </Link>
                     <a href="#" className="give-classes">
                         <img
                             src={giveClassesImage}
