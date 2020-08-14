@@ -3,6 +3,8 @@ import PageHeader from '../../Components/PageHeader';
 
 import smileIcon from '../../Assets/Icons/smile.svg';
 
+import './style.css'
+
 function TeacherList() {
     return (
         <div className="teachers-container">
@@ -11,6 +13,7 @@ function TeacherList() {
                 navTitle="Estudar"
             >
                 <img src={smileIcon} alt="Emote Sorrindo" />
+                <p>Nós temos 32 professores.</p>
             </PageHeader>
         </div>
     );

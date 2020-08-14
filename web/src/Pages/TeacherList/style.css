@@ -1,0 +1,20 @@
+.teachers-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+.teachers-container .childrens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.teachers-container .childrens p {
+    display: block;
+    max-width: 14rem;
+}
+
+.teachers-container .childrens img{
+    margin-right: 2rem;
+}

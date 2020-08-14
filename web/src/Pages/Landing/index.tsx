@@ -17,6 +17,7 @@ function Landing() {
         <div id="page-landing" className="page-landing" >
             <div id="page-landing-content">
                 <header id="header-container" className="container">
+
                     <a href="">
                         <img
                             src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
@@ -24,23 +25,36 @@ function Landing() {
                         />
                         <p>Luiz Pedro</p>
                     </a>
-                    <a href="#" className="buttonPower"><span><i className="fas fa-power-off"></i></span></a>
+                    <a 
+                        href="#" 
+                        className="buttonPower"
+                    >
+                        <span><i className="fas fa-power-off"></i></span>
+                    </a>
+
                 </header>
+
                 <div className="logo-container">
+
                     <div className="logo-content">
                         <img src={logoImage} alt="logo" />
                         <h2>Sua plataforma de estudos online</h2>
                     </div>
                     <img className="hero-image" src={hero} alt="hero" />
+
                 </div>
+
             </div>
 
             <section className="semi-footer">
+
                 <div className="text-content">
                     <h2>Seja bem-vindo !</h2>
                     <strong>O que você deseja fazer ?</strong>
                 </div>
+
                 <div className="buttons-container">
+
                     <Link to="/study" className="study">
                         <img src={studyImage} alt="Estudar" />
                         <p>Estudar</p>
@@ -52,7 +66,9 @@ function Landing() {
                         />
                         <p>Dar Aulas</p>
                     </a>
+                    
                 </div>
+
                 <div className="connections">
                     <p>
                         Total de 285 conexôes
