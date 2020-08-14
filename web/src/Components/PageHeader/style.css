@@ -15,12 +15,12 @@
     padding: 1.6rem;
 }
 
-.menu > img {
-    transition: opacity 0.2s;
+.menu a:first-child {
     cursor: pointer;
+    transition: opacity 0.2s;
 }
 
-.menu > img:hover{
+.menu > a:hover{
     opacity: 80%;
 }
 
@@ -57,7 +57,14 @@
 }
 
 @media(min-width: 1120px){
+
     .menu{
         max-width: 120rem;
+    }
+
+    .content{
+        max-width: 80rem;
+        margin: 0 auto;
+        margin-top: 5rem;
     }
 }

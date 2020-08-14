@@ -18,3 +18,21 @@
 .teachers-container .childrens img{
     margin-right: 2rem;
 }
+
+@media(min-width: 1120px){
+
+    .teachers-container .content{
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .teachers-container .childrens{
+        margin-top: 0;
+    }
+
+    .teachers-container .title h2{
+        display: block;
+        max-width: 35rem;
+    }
+
+}
