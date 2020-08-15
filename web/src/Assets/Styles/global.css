@@ -18,6 +18,10 @@
     --color-button-text: #FFFFFF;
     --color-box-base: #FFFFFF;
     --color-box-footer: #FAFAFC;
+    --color-button-feature: #1186d4cb;
+    --color-button-feature-darker: #1c85cccb;
+    --color-exit-button-feature: #D60034;
+    --color-exit-button-feature-darker: #d60035bd;
 }
 
 *{

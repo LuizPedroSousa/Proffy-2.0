@@ -1,6 +1,8 @@
 .header-container{
-    height: 100vh;
+    height: 42vh;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-content{

@@ -3,23 +3,109 @@
     height: 100vh;
 }
 
+.teachers-container .content-container{
+    height: 63rem;
+}
+
 .teachers-container .childrens{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin-top: 3rem;
 }
 
-.teachers-container .childrens p {
-    display: block;
-    max-width: 14rem;
+.description-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.6rem;
 }
 
-.teachers-container .childrens img{
+.description-content p {
+    display: block;
+    max-width: 14rem;
     margin-right: 2rem;
 }
 
+.description-content img{
+    margin-right: 2rem;
+}
+
+#filter{
+    background-color: var(--color-button-feature);
+    border: 0;
+    border-radius: 3.8rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    color: var(--color-button-text);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+#filter:hover{
+    background-color: var(--color-button-feature-darker);
+}
+
+#none-filter{
+    background-color: var(--color-exit-button-feature);
+    border: 0;
+    border-radius: 3.8rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    color: var(--color-button-text);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 0;
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+#none-filter:hover{
+    background-color: var(--color-exit-button-feature-darker);
+}
+
+#search-teachers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#search-teachers button{
+    border: none;
+    height: 5.6rem;
+    width: 5.6rem;
+    border-radius: 3rem;
+    margin-top: 2rem;
+    color: var(--color-button-text);
+    font-size: 2rem;
+    outline: 0;
+    cursor: pointer;
+    background-color: var(--color-primary-lighter);
+}
+
+#search-teachers .input-block input[type =time]{
+    width: 30rem;
+    margin-left: 2rem;
+}
+
+#search-teachers .input-block label{
+    margin-left: 2rem;
+}
+
 @media(min-width: 1120px){
+    .teachers-container .content-container{
+        height: 20rem;
+    }
 
     .teachers-container .content{
         justify-content: space-between;
