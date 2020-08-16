@@ -36,7 +36,7 @@
 }
 
 @media(min-width: 1120px){
-    .input-block + .input-block{
+    .select-block + .input-block{
         margin-top: 0;
     }
 }

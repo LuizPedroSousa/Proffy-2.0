@@ -28,7 +28,7 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
                     <img src={logoImage} alt="Proffy" />
                 </div>
             </nav>
-            <div className="content-container">
+            <div className="content-container" id="content-container">
                 <div className="content">
                     <div className="title">
                         <h2>{props.title}</h2>

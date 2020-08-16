@@ -3,11 +3,11 @@
     height: 100vh;
 }
 
-.teachers-container .content-container{
+.content-container{
     height: 63rem;
 }
 
-.teachers-container .childrens{
+.childrens{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,6 +31,8 @@
 .description-content img{
     margin-right: 2rem;
 }
+
+
 
 #filter{
     background-color: var(--color-button-feature);
@@ -68,57 +70,67 @@
     cursor: pointer;
 }
 
+
 #none-filter:hover{
     background-color: var(--color-exit-button-feature-darker);
 }
 
-#search-teachers{
+#search-teachers button{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
-}
-
-#search-teachers button{
     border: none;
     height: 5.6rem;
     width: 5.6rem;
     border-radius: 3rem;
+    margin: 0 auto;
     margin-top: 2rem;
     color: var(--color-button-text);
     font-size: 2rem;
     outline: 0;
     cursor: pointer;
     background-color: var(--color-primary-lighter);
+    transition: background-color 0.2s;
 }
 
-#search-teachers .input-block input[type =time]{
-    width: 30rem;
-    margin-left: 2rem;
-}
-
-#search-teachers .input-block label{
-    margin-left: 2rem;
+#search-teachers button:hover{
+    background-color: var(--color-primary-light);
 }
 
 @media(min-width: 1120px){
-    .teachers-container .content-container{
-        height: 20rem;
+    .content-container{
+        padding-bottom: 8rem;
+    }
+    #search-teachers{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 16px;
+        max-width: 72%;
+        position: absolute;
+        top: 22rem;
+        left: 28rem;
     }
 
-    .teachers-container .content{
-        justify-content: space-between;
+    #search-teachers button{
+        margin: 0;
+        margin-top: 3rem;
+    }
+
+    .content{
         flex-direction: row;
+        justify-content: space-between;
     }
 
-    .teachers-container .childrens{
+    .childrens{
         margin-top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .teachers-container .title h2{
+    .title h2{
         display: block;
         max-width: 35rem;
     }
 
+    
 }
