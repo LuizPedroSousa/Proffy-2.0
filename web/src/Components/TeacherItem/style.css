@@ -1,0 +1,99 @@
+.teacher-item{
+    background-color: var(--color-box-base);
+    overflow: hidden;
+    margin: 2.6rem 0;
+    border-radius: 0.8rem;
+}
+
+.teacher-item header{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.teacher-item header img{
+    width: 5.7rem;
+    height: 5.7rem;
+    border-radius: 3.8rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.teacher-item header div strong{
+    font: 700 2.4rem Archivo;
+    color: var(--color-text-title);
+}
+
+.teacher-item section{
+    margin: 2.8rem 0rem 0;
+}
+
+.teacher-item section > p{
+    margin: 2rem;
+}
+
+.teacher-item section > div{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4px;
+    row-gap: 12px;
+    margin-left: 1rem;
+}
+
+.teacher-item footer{
+    background-color: var(--color-box-footer);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2.5rem;
+    box-shadow: 0 -1px var(--color-line-in-white);
+}
+
+.teacher-item .text{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+}
+
+.teacher-item .text p{
+    color: var(--color-text-complement);
+    font-size: 1.4rem;
+    margin-right: 1rem;
+}
+
+.teacher-item footer strong{
+    font: 700 2rem Archivo;
+    color: var(--color-primary);
+}
+
+.teacher-item footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-secondary);
+    width: 100%;
+    max-width: 25rem;
+    height: 5.2rem;
+    border-radius: 0.8rem;
+    text-decoration: none;
+    margin: 1.6rem;
+    transition: background-color 0.2s;
+}
+
+.teacher-item footer a span{
+    margin-right: 1rem;
+    color: var(--color-button-text);
+    font-size: 2.8rem;
+}
+
+.teacher-item footer a > p {
+    font-size: 600 1.6rem Archivo;
+    color: var(--color-button-text);
+}
+
+.teacher-item footer a:hover{
+    background-color: var(--color-secondary-dark);
+}

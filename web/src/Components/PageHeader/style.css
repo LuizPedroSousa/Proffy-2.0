@@ -37,6 +37,7 @@
 
 .content-container{
     background-color: var(--color-primary);
+    z-index: 1000;
     height: 25.7rem;
     padding: 1.6rem;
 }

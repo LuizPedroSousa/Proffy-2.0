@@ -7,6 +7,10 @@
     height: 63rem;
 }
 
+.content + .teacher-item{
+    opacity: 10%;
+}
+
 .childrens{
     display: flex;
     align-items: center;
@@ -97,6 +101,11 @@
     background-color: var(--color-primary-light);
 }
 
+.teachers-container main{
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 90%;
+}
 @media(min-width: 1120px){
     .content-container{
         padding-bottom: 8rem;
@@ -117,6 +126,7 @@
     }
 
     .content{
+        
         flex-direction: row;
         justify-content: space-between;
     }

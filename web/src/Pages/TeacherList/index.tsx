@@ -6,6 +6,8 @@ import smileIcon from '../../Assets/Icons/smile.svg';
 import './style.css'
 import Select from './../../Components/Elements/Select/index';
 import Input from './../../Components/Elements/Input/index';
+import TeacherItem from './../../Components/TeacherItem/index';
+import TimeCard from './../../Components/TimeCard/index';
 
 function TeacherList() {
     const [searchTeachers, setSearchTeachers] = useState(false);
@@ -95,7 +97,149 @@ function TeacherList() {
                     }
                 </div>
             </PageHeader>
+            <main>
+                <TeacherItem
+                    name="Luiz Pedro"
+                    bio="Entusiasta das melhores tecnologias de química avançada. Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões."
+                    price={20}
+                    subject="Programing"
+                    whatsapp="1111111"
+                    avatar="https://pbs.twimg.com/profile_images/1275547289885573120/RHfriB2O_400x400.jpg"
+                    id={1}
+                >
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Segunda" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "1", label: "Terça" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Quarta" },
+                        ]}
+                    />
 
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Quinta" },
+                        ]}
+                    />
+
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Sexta" },
+                        ]}
+                    />
+
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Sabado" },
+                        ]}
+                    />
+
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+
+                </TeacherItem>
+
+                <TeacherItem
+                    name="Luiz Pedro"
+                    bio="Entusiasta das melhores tecnologias de química avançada. Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões."
+                    price={20}
+                    subject="Programing"
+                    whatsapp="1111111"
+                    avatar="https://pbs.twimg.com/profile_images/1275547289885573120/RHfriB2O_400x400.jpg"
+                    id={1}
+                >
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+                </TeacherItem>
+
+                <TeacherItem
+                    name="Luiz Pedro"
+                    bio="Entusiasta das melhores tecnologias de química avançada. Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões."
+                    price={20}
+                    subject="Programing"
+                    whatsapp="1111111"
+                    avatar="https://pbs.twimg.com/profile_images/1275547289885573120/RHfriB2O_400x400.jpg"
+                    id={1}
+                >
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 20, to: 10 },
+                        ]}
+                        week_day={[
+                            { value: "0", label: "Domingo" },
+                        ]}
+                    />
+                </TeacherItem>
+            </main>
         </div>
     );
 }
