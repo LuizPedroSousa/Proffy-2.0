@@ -4,7 +4,7 @@
 }
 
 .content-container{
-    height: 63rem;
+    height: 61rem;
 }
 
 .content + .teacher-item{
@@ -107,17 +107,19 @@
     width: 90%;
 }
 @media(min-width: 1120px){
+
     .content-container{
         padding-bottom: 8rem;
     }
+    
     #search-teachers{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 16px;
-        max-width: 72%;
+        max-width: 67%;
         position: absolute;
         top: 22rem;
-        left: 28rem;
+        left: 30rem;
     }
 
     #search-teachers button{
@@ -126,9 +128,18 @@
     }
 
     .content{
-        
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .childrens,
+    .title{
+        margin: 0 3rem;
+    }
+
+    .title h2{
+        display: block;
+        max-width: 35rem;
     }
 
     .childrens{
@@ -137,10 +148,9 @@
         flex-wrap: wrap;
     }
 
-    .title h2{
-        display: block;
-        max-width: 35rem;
+    .teachers-container main{
+        margin-top: 8rem;
+        max-width: 73.6rem;
     }
-
     
 }

@@ -8,10 +8,11 @@ import Select from './../../Components/Elements/Select/index';
 import Input from './../../Components/Elements/Input/index';
 import TeacherItem from './../../Components/TeacherItem/index';
 import TimeCard from './../../Components/TimeCard/index';
+import ReactDOM from 'react-dom';
+
 
 function TeacherList() {
     const [searchTeachers, setSearchTeachers] = useState(false);
-
     function handleSearchTeachers() {
         if (!searchTeachers) {
             return setSearchTeachers(true);
@@ -99,12 +100,12 @@ function TeacherList() {
             </PageHeader>
             <main>
                 <TeacherItem
-                    name="Luiz Pedro"
-                    bio="Entusiasta das melhores tecnologias de química avançada. Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões."
-                    price={20}
+                    name="Henrique"
+                    bio="Hmm Café Docinhu."
+                    price={50}
                     subject="Programing"
                     whatsapp="1111111"
-                    avatar="https://pbs.twimg.com/profile_images/1275547289885573120/RHfriB2O_400x400.jpg"
+                    avatar="https://scontent-gru1-1.xx.fbcdn.net/v/t1.0-9/51795498_1083410521838177_3500642089929015296_n.jpg?_nc_cat=106&_nc_sid=84a396&_nc_ohc=e9hgydwgFUAAX-WUpED&_nc_ht=scontent-gru1-1.xx&oh=1cdd0cd9f501729df56ec43e3ec4e925&oe=5F5E13D3"
                     id={1}
                 >
                     <TimeCard
@@ -150,24 +151,6 @@ function TeacherList() {
                         ]}
                     />
 
-                    <TimeCard
-                        time={[
-                            { from: 20, to: 10 },
-                        ]}
-                        week_day={[
-                            { value: "0", label: "Sabado" },
-                        ]}
-                    />
-
-                    <TimeCard
-                        time={[
-                            { from: 20, to: 10 },
-                        ]}
-                        week_day={[
-                            { value: "0", label: "Domingo" },
-                        ]}
-                    />
-
                 </TeacherItem>
 
                 <TeacherItem
@@ -176,7 +159,7 @@ function TeacherList() {
                     price={20}
                     subject="Programing"
                     whatsapp="1111111"
-                    avatar="https://pbs.twimg.com/profile_images/1275547289885573120/RHfriB2O_400x400.jpg"
+                    avatar="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
                     id={1}
                 >
                     <TimeCard
@@ -184,7 +167,31 @@ function TeacherList() {
                             { from: 20, to: 10 },
                         ]}
                         week_day={[
-                            { value: "0", label: "Domingo" },
+                            { value: "1", label: "Segunda" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 9, to: 12 },
+                        ]}
+                        week_day={[
+                            { value: "2", label: "Terça" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 8, to: 12 },
+                        ]}
+                        week_day={[
+                            { value: "3", label: "Quarta" },
+                        ]}
+                    />
+                    <TimeCard
+                        time={[
+                            { from: 8, to: 16 },
+                        ]}
+                        week_day={[
+                            { value: "4", label: "Quinta" },
                         ]}
                     />
                     <TimeCard
@@ -192,50 +199,7 @@ function TeacherList() {
                             { from: 20, to: 10 },
                         ]}
                         week_day={[
-                            { value: "0", label: "Domingo" },
-                        ]}
-                    />
-                    <TimeCard
-                        time={[
-                            { from: 20, to: 10 },
-                        ]}
-                        week_day={[
-                            { value: "0", label: "Domingo" },
-                        ]}
-                    />
-                </TeacherItem>
-
-                <TeacherItem
-                    name="Luiz Pedro"
-                    bio="Entusiasta das melhores tecnologias de química avançada. Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas explosões."
-                    price={20}
-                    subject="Programing"
-                    whatsapp="1111111"
-                    avatar="https://pbs.twimg.com/profile_images/1275547289885573120/RHfriB2O_400x400.jpg"
-                    id={1}
-                >
-                    <TimeCard
-                        time={[
-                            { from: 20, to: 10 },
-                        ]}
-                        week_day={[
-                            { value: "0", label: "Domingo" },
-                        ]}
-                    />
-                    <TimeCard
-                        time={[
-                            { from: 20, to: 10 },
-                        ]}
-                        week_day={[
-                            { value: "0", label: "Domingo" },
-                        ]}
-                    />
-                    <TimeCard
-                        time={[
-                            { from: 20, to: 10 },
-                        ]}
-                        week_day={[
-                            { value: "0", label: "Domingo" },
+                            { value: "5", label: "Sexta" },
                         ]}
                     />
                 </TeacherItem>
@@ -243,5 +207,4 @@ function TeacherList() {
         </div>
     );
 }
-
 export default TeacherList;

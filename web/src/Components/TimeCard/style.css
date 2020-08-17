@@ -1,5 +1,7 @@
 .time-card{
-    background-color: var(--color-box-footer);
+    background: linear-gradient(
+         to right bottom, var(--color-primary) 40%, var(--color-primary-darker)
+        );
     opacity: 80%;
     padding: 2rem;
     display: flex;
@@ -13,7 +15,7 @@
 
 .time-card > div > p {
     font-size: 1.2rem;
-    color: var(--color-text-complement);
+    color: var(--color-text-in-primary);
     line-height: 1rem;
 }
 
@@ -22,5 +24,23 @@
 }
 
 .time-card strong{
+    color: var(--color-button-text);
     font-size: 1.1rem;
+}
+
+@media(min-width: 1120px){
+    .time-card{
+        height: 13.6rem;
+        width: 12.2rem;
+        
+    }
+
+    .time-card > div > p{
+        line-height: 2rem;
+    }
+
+    .time-card strong{
+        line-height: 2.6rem;
+        font-size: 1.6rem;
+    }
 }
