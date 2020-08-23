@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FormEvent } from 'react'
 
 import './style.css'
 
@@ -8,9 +8,13 @@ interface FormProps {
 }
 
 const Form: React.FunctionComponent<FormProps> = ({ children, title, buttonName }) => {
+    
+    function enterAcount(e: FormEvent){
+        e.preventDefault();
+    }
     return (
         <div className="form-container">
-            <form className="form">
+            <form className="form" onSubmit={enterAcount}>
                 <strong>{title}</strong>
                 {children}
                 <button type="submit">

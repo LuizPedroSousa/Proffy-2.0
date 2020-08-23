@@ -9,11 +9,20 @@ import InputForm from './../../Components/Elements/InputForm/index';
 
 function Login() {
     const [checkbox, setCheckbox] = useState(false);
+    const [viewPassword, setViewPasssword] = useState(false);
     function toggleCheckboxRemember() {
         if (!checkbox) {
             return setCheckbox(true);
         } else {
             return setCheckbox(false);
+        }
+    }
+
+    function toggleViewPassword() {
+        if (!viewPassword) {
+            return setViewPasssword(true);
+        } else {
+            return setViewPasssword(false);
         }
     }
     return (
@@ -31,8 +40,24 @@ function Login() {
                 <InputForm
                     label="Senha"
                     name="password"
-                    type="password"
-                />
+                    type={!viewPassword ? "password" : "text"}
+                >
+                    {
+                        !viewPassword ?
+                            <span
+                                onClick={toggleViewPassword}
+                                style={{ color: "var(--color-text-complement" }}>
+                                <i className="far fa-eye"></i>
+                            </span>
+                            :
+                            <span
+                                onClick={toggleViewPassword}
+                                style={{ color: "var(--color-primary" }}>
+                                <i className="far fa-eye-slash"></i>
+                            </span>
+                    }
+                </InputForm>
+
                 <div className="options-login">
                     {
                         checkbox ?
@@ -54,7 +79,7 @@ function Login() {
                     <p>Não tem conta?</p>
                     <a href="#">Cadastre-se</a>
                 </div>
-                <p>é de graça <span><i className="fas fa-heart"></i></span></p>
+                <p>É de graça <span><i className="fas fa-heart"></i></span></p>
             </footer>
         </div>
     );

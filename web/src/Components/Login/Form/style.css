@@ -1,11 +1,14 @@
 .form-container{
     padding: 2rem;
     line-height: 6rem;
+    margin-top: 4rem;
 }
 
 .form strong{
     font: 600 3.6rem Poppins ;
     color: var(--color-text-title);
+    display: block;
+    margin-bottom: 2.8rem;
 }
 
 .form button{
@@ -23,33 +26,4 @@
 
 .form button:hover{
     background-color: var(--color-secondary-dark);
-}
-
-.options-login{
-    display: flex;
-    align-items: center;
-}
-
-.options-login span{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.4rem;
-    height: 2.4rem;
-    border: 1px solid var(--color-line-in-white);
-    background-color: var(--color-box-footer);
-    border-radius: 0.8rem;
-    margin-right: 1rem;
-    font-size: 1rem;
-    color: var(--color-box-base);
-}
-
-.options-login label{
-    margin-right: 4rem;
-}
-
-.options-login a{
-    color: var(--color-text-complement);
-    text-decoration: none;
-    font: 400 1.4rem Poppins;
 }
