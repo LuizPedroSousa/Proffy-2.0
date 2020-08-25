@@ -1,0 +1,24 @@
+.register-container{
+    height: 100vh;
+}
+
+.register-container header{
+    padding: 2rem;
+}
+
+.register-container .form-container{
+    margin-bottom: 8rem;
+    margin-top: 0;
+}
+
+.register-container .form-container .form strong{
+    margin-bottom: 0;
+}
+
+.register-container .form-container .form button{
+    margin-top: 5rem;
+}
+
+.register-container .login-proffy-container{
+    width: 100vw;
+}

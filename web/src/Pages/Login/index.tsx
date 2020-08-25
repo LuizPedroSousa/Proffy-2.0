@@ -4,6 +4,7 @@ import './style.css'
 import Proffy from './../../Components/Login/Proffy/index';
 import Form from './../../Components/Login/Form/index';
 import InputForm from './../../Components/Elements/InputForm/index';
+import { Link } from 'react-router-dom';
 
 
 
@@ -78,7 +79,7 @@ function Login() {
                 <footer>
                     <div className="accont">
                         <p>Não tem conta?</p>
-                        <a href="#">Cadastre-se</a>
+                        <Link to="/register">Cadastre-se</Link>
                     </div>
                     <p>É de graça <span><i className="fas fa-heart"></i></span></p>
                 </footer>

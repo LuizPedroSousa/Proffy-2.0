@@ -26,10 +26,16 @@
     font-weight: 400;
 }
 
-.input-form-block input[type="email"]{
+.form strong + .input-form-block input{
     border-top-left-radius: 0.8rem;
     border-top-right-radius: 0.8rem;
 }
+
+.form p + .input-form-block input{
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+}
+
 
 .input-form-block input[type="password"]{
     border-bottom-left-radius: 0.8rem;
