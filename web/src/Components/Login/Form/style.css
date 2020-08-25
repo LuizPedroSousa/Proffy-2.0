@@ -9,6 +9,7 @@
     color: var(--color-text-title);
     display: block;
     margin-bottom: 2.8rem;
+    max-width: 30rem;
 }
 
 .form > p{

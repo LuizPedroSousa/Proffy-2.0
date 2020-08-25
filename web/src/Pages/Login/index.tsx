@@ -73,7 +73,7 @@ function Login() {
                                 <span onClick={toggleCheckboxRemember}></span>
                         }
                         <label onClick={toggleCheckboxRemember}>Lembrar-me</label>
-                        <a href="#">Esqueci minha senha</a>
+                        <Link to="restore password">Esqueci minha senha</Link>
                     </div>
                 </Form>
                 <footer>
