@@ -22,8 +22,22 @@
     font: 600 1.6rem Archivo;
     transition: background-color 0.2s;
     outline: 0;
+    cursor: pointer;
 }
 
 .form button:hover{
     background-color: var(--color-secondary-dark);
+}
+
+@media(min-width: 1120px){
+    .form button{
+        width: 35.2rem;
+    }
+}
+
+
+@media(min-width: 411px){
+    .form-container{
+        padding: 3rem;
+    }
 }

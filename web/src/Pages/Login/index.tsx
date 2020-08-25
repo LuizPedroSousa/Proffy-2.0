@@ -28,59 +28,61 @@ function Login() {
     return (
         <div className="login-container">
             <Proffy />
-            <Form
-                title="Fazer Login"
-                buttonName="Entrar"
-            >
-                <InputForm
-                    label="Email"
-                    name="email"
-                    type="Email"
-                />
-                <InputForm
-                    label="Senha"
-                    name="password"
-                    type={!viewPassword ? "password" : "text"}
+            <section>
+                <Form
+                    title="Fazer Login"
+                    buttonName="Entrar"
                 >
-                    {
-                        !viewPassword ?
-                            <span
-                                onClick={toggleViewPassword}
-                                style={{ color: "var(--color-text-complement" }}>
-                                <i className="far fa-eye"></i>
-                            </span>
-                            :
-                            <span
-                                onClick={toggleViewPassword}
-                                style={{ color: "var(--color-primary" }}>
-                                <i className="far fa-eye-slash"></i>
-                            </span>
-                    }
-                </InputForm>
+                    <InputForm
+                        label="Email"
+                        name="email"
+                        type="Email"
+                    />
+                    <InputForm
+                        label="Senha"
+                        name="password"
+                        type={!viewPassword ? "password" : "text"}
+                    >
+                        {
+                            !viewPassword ?
+                                <span
+                                    onClick={toggleViewPassword}
+                                    style={{ color: "var(--color-text-complement" }}>
+                                    <i className="far fa-eye"></i>
+                                </span>
+                                :
+                                <span
+                                    onClick={toggleViewPassword}
+                                    style={{ color: "var(--color-primary" }}>
+                                    <i className="far fa-eye-slash"></i>
+                                </span>
+                        }
+                    </InputForm>
 
-                <div className="options-login">
-                    {
-                        checkbox ?
-                            <span
-                                onClick={toggleCheckboxRemember}
-                                style={{ backgroundColor: 'var(--color-secondary)' }}
-                            >
-                                <i className="fas fa-check"></i>
-                            </span>
-                            :
-                            <span onClick={toggleCheckboxRemember}></span>
-                    }
-                    <label onClick={toggleCheckboxRemember}>Lembrar-me</label>
-                    <a href="#">Esqueci minha senha</a>
-                </div>
-            </Form>
-            <footer>
-                <div className="accont">
-                    <p>Não tem conta?</p>
-                    <a href="#">Cadastre-se</a>
-                </div>
-                <p>É de graça <span><i className="fas fa-heart"></i></span></p>
-            </footer>
+                    <div className="options-login">
+                        {
+                            checkbox ?
+                                <span
+                                    onClick={toggleCheckboxRemember}
+                                    style={{ backgroundColor: 'var(--color-secondary)' }}
+                                >
+                                    <i className="fas fa-check"></i>
+                                </span>
+                                :
+                                <span onClick={toggleCheckboxRemember}></span>
+                        }
+                        <label onClick={toggleCheckboxRemember}>Lembrar-me</label>
+                        <a href="#">Esqueci minha senha</a>
+                    </div>
+                </Form>
+                <footer>
+                    <div className="accont">
+                        <p>Não tem conta?</p>
+                        <a href="#">Cadastre-se</a>
+                    </div>
+                    <p>É de graça <span><i className="fas fa-heart"></i></span></p>
+                </footer>
+            </section>
         </div>
     );
 }

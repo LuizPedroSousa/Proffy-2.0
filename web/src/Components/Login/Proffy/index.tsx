@@ -5,17 +5,13 @@ import backgroundImage from '../../../Assets/Images/background.svg';
 import logoImage from '../../../Assets/Images/logo.svg';
 function Proffy() {
     return (
-        <div className="login-proffy-container">
-            <img
-                src={backgroundImage}
-                alt="background"
-            />
-            <div className="login-proffy-content">
+        <div className="login-proffy-container" style={{backgroundImage: `url(${backgroundImage})`}}>
+            <div>
                 <img
                     src={logoImage}
                     alt="Proffy"
                 />
-                <p>Sua plataforma de estudos online.</p>
+                <h2>Sua plataforma de estudos online.</h2>
             </div>
         </div>
     );

@@ -19,17 +19,30 @@
     border-radius: 0.8rem;
     margin-right: 1rem;
     font-size: 1rem;
+    cursor: pointer;
     color: var(--color-box-base);
+    transition: opacity 0.2s;
+}
+
+.options-login span:hover{
+    opacity: 50%;
 }
 
 .options-login label,
 .options-login a{
     font: 400 1.4rem Poppins;
     color: var(--color-text-complement);
+    transition: opacity 0.2s;
+}
+
+.options-login label:hover,
+.options-login a:hover{
+    opacity: 50%;
 }
 
 .options-login label{
     margin-right: 6rem;
+    cursor: pointer;
 }
 
 .options-login a{
@@ -39,9 +52,10 @@
 .login-container footer{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin: 2rem 0;
+    justify-content: space-between;
+    margin: 2rem auto;
     margin-bottom: 4rem;
+    max-width: 32.7rem;
 }
 
 .accont{
@@ -61,9 +75,32 @@
     color: var(--color-primary);
 }
 
+@media(min-width: 1120px){
+    .login-container{
+        display: flex;
+        align-items: center;
+    }
+    .login-container section{
+        margin: 0 10rem;
+    }
+
+    .login-container label{
+        margin-right: 7.8rem !important;
+    }
+
+    .login-container footer{
+        margin-bottom: 0;
+        max-width: 35.7rem;
+    }
+}
+
 
 @media(min-width: 411px){
     .login-container label{
-        margin-right: 11rem;
+        margin-right: 9rem;
+    }
+
+    .login-container footer{
+        max-width: 35.7rem;
     }
 }

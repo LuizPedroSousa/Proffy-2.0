@@ -41,6 +41,14 @@ body, textarea, p, h2, input{
     font: 500 1.6rem Poppins;
 }
 
+a {
+    transition:  opacity 0.2s;
+}
+
+a:hover{
+    opacity: 50%;
+}
+
 #root{
     display: flex;
     align-items: center;

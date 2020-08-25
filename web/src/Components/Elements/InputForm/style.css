@@ -1,5 +1,6 @@
 .input-form-block{
     position: relative;
+    line-height: 0;
 }
 
 .input-form-block label{
@@ -38,16 +39,28 @@
 .input-form-block span{
     position: absolute;
     right: 2.8rem;
-    top: 0.5rem;
+    top: 2.4rem;
     font-size: 2rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.input-form-block span:hover{
+    opacity: 50%;
 }
 
 .input-form-block:focus-within::before{
     content: "";
     width: 2px;
     position: absolute;
-    height: calc(100% - 2rem);
+    height: calc(100% - 2.4rem);
     top: 1rem;
     border-radius: 8rem;
     background-color: var(--color-primary);
+}
+
+@media(min-width: 1120px){
+    .input-form-block input{ 
+        width: 35.2rem;
+    }
 }
