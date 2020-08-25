@@ -25,8 +25,8 @@ function Landing() {
                         />
                         <p>Luiz Pedro</p>
                     </a>
-                    <a 
-                        href="#" 
+                    <a
+                        href="#"
                         className="buttonPower"
                     >
                         <span><i className="fas fa-power-off"></i></span>
@@ -37,7 +37,7 @@ function Landing() {
                 <div className="logo-container">
 
                     <div className="logo-content">
-                        <img src={logoImage} alt="logo" />
+                        <img src={logoImage} alt="Proffy" />
                         <h2>Sua plataforma de estudos online</h2>
                     </div>
                     <img className="hero-image" src={hero} alt="hero" />
@@ -66,14 +66,15 @@ function Landing() {
                         />
                         <p>Dar Aulas</p>
                     </a>
-                    
+
                 </div>
 
                 <div className="connections">
                     <p>
                         Total de 285 conexôes
+                        
                     </p>
-                    <span> já realizadas <i className="far fa-heart"></i></span>
+                    <span> já realizadas <i className="fas fa-heart"></i></span>
                 </div>
             </section>
         </div>
