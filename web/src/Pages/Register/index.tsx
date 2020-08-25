@@ -20,52 +20,56 @@ function Register() {
     }
     return (
         <div className="register-container">
-            <header>
-                <Link to="/login">
-                    <img src={backIcon} alt="Voltar" />
-                </Link>
-            </header>
-            <Form
-                title="Cadastro"
-                description="Preencha os dados abaixo para começar."
-                buttonName="Concluir Cadastro"
-            >
-                <InputForm
-                    label="Nome"
-                    name="name"
-                    type="text"
-                />
-                <InputForm
-                    label="Sobrenome"
-                    name="surname"
-                    type="text"
-                />
-                <InputForm
-                    label="Email"
-                    name="email"
-                    type="email"
-                />
-                <InputForm
-                    label="Senha"
-                    name="password"
-                    type={!viewPassword ? "password" : "text"}
-                >
-                    {
-                        !viewPassword ?
-                            <span
-                                onClick={toggleViewPassword}
-                                style={{ color: "var(--color-text-complement" }}>
-                                <i className="far fa-eye"></i>
-                            </span>
-                            :
-                            <span
-                                onClick={toggleViewPassword}
-                                style={{ color: "var(--color-primary" }}>
-                                <i className="far fa-eye-slash"></i>
-                            </span>
-                    }
-                </InputForm>
-            </Form>
+            <div className="register-content">
+                <header>
+                    <Link to="/login">
+                        <img src={backIcon} alt="Voltar" />
+                    </Link>
+                </header>
+                <section>
+                    <Form
+                        title="Cadastro"
+                        description="Preencha os dados abaixo para começar."
+                        buttonName="Concluir Cadastro"
+                    >
+                        <InputForm
+                            label="Nome"
+                            name="name"
+                            type="text"
+                        />
+                        <InputForm
+                            label="Sobrenome"
+                            name="surname"
+                            type="text"
+                        />
+                        <InputForm
+                            label="Email"
+                            name="email"
+                            type="email"
+                        />
+                        <InputForm
+                            label="Senha"
+                            name="password"
+                            type={!viewPassword ? "password" : "text"}
+                        >
+                            {
+                                !viewPassword ?
+                                    <span
+                                        onClick={toggleViewPassword}
+                                        style={{ color: "var(--color-text-complement" }}>
+                                        <i className="far fa-eye"></i>
+                                    </span>
+                                    :
+                                    <span
+                                        onClick={toggleViewPassword}
+                                        style={{ color: "var(--color-primary" }}>
+                                        <i className="far fa-eye-slash"></i>
+                                    </span>
+                            }
+                        </InputForm>
+                    </Form>
+                </section>
+            </div>
             <Proffy />
         </div>
     );

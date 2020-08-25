@@ -1,5 +1,9 @@
 .register-container{
     height: 100vh;
+    width: 100vw;
+}
+
+.register-content{
 }
 
 .register-container header{
@@ -19,6 +23,19 @@
     margin-top: 5rem;
 }
 
-.register-container .login-proffy-container{
-    width: 100vw;
+@media(min-width: 1120px){
+    .register-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .register-container .form-container,
+    .register-container header{
+        margin: 0 10rem;
+        padding-top: 0;
+    }
+
+    .register-container header{
+        margin: 0 11rem;
+    }
 }
