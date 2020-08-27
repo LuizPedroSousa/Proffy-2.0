@@ -1,0 +1,149 @@
+.teacher-form-container{
+    height: 100vh;
+    width: 100vw;
+}
+.teacher-form-container .content-container{
+    padding-bottom: 10rem;
+}
+
+.teacher-form-container .content-container .title p{
+    margin: 1rem 0;
+}
+
+.teacher-form-container .content-container .childrens{
+    flex-direction: row-reverse;
+}
+
+.teacher-form-container .content-container .childrens p{
+    margin-left: 2rem;
+}
+
+.teacher-form-container .content-container .childrens p p{
+    margin: 0;
+}
+
+.teacher-form-container form{
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    max-width: 35rem;
+    margin: 12rem auto;
+    margin-bottom: 5rem;
+    border-radius: 0.8rem;
+    border: 1px solid var(--color-line-in-white);
+    background-color: var(--color-box-base);
+}
+
+.teacher-form-container form main{
+    padding: 2rem;
+}
+
+.teacher-form-container fieldset{
+    border: 0;
+}
+
+
+.teacher-form-container fieldset + fieldset{
+    margin: 4rem 0;
+}
+
+.teacher-form-container fieldset legend{
+    font: 600 2.4rem Archivo;
+    color: var(--color-text-title);
+    border-bottom: 1px solid var(--color-line-in-white);
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.teacher-form-container fieldset .perfil{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+
+.teacher-form-container .perfil img{
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 3.8rem;
+    margin-right: 1rem;
+}
+
+.teacher-form-container .perfil p{
+    font: 700 2rem Archivo;
+    color: var(--color-text-title);
+}
+
+.teacher-form-container form .input-block label,
+.teacher-form-container form .select-block label{
+    color: var(--color-text-complement);
+}
+
+.teacher-form-container form .input-block input,
+.teacher-form-container form .select-block select{
+    color: var(--color-primary);
+}
+
+.teacher-form-container section form main .input-block + .text-area-block{
+    margin-top: 2rem;
+}
+
+
+.teacher-form-container form main fieldset:last-child legend{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.teacher-form-container form main fieldset legend p{
+    color: var(--color-primary);
+    margin-top: 0.5rem;
+    font: 600 1.6rem Archivo;
+    margin-left: 10rem;
+}
+
+.teacher-form-container form footer{
+    background-color: var(--color-box-footer);
+    padding: 2rem;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+
+.teacher-form-container form footer div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.teacher-form-container form footer div img{
+    margin-right: 1rem;
+}
+
+.teacher-form-container form footer div p{
+    color: var(--color-primary);
+    font: 400 1.2rem Poppins;
+}
+
+.teacher-form-container form footer div p p{
+    color: var(--color-text-light);
+}
+
+.teacher-form-container form footer button{
+    width: 100%;
+    height: 5.6rem;
+    background-color: var(--color-secondary);
+    border: 0;
+    outline: 0;
+    color: var(--color-button-text);
+    font: 600 1.6rem Archivo;
+    border-radius: 0.8rem;
+    margin: 2rem 0;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.teacher-form-container form footer button:hover{
+    background-color: var(--color-secondary-dark);
+    margin: 4rem 0;
+}

@@ -3,11 +3,16 @@
     width: 100vw;
 }
 
-.register-content{
-}
-
 .register-container header{
     padding: 2rem;
+}
+
+.register-container header a{
+    transition: opacity 0.2s;
+}
+
+.register-container header a:hover{
+    opacity: 50%;
 }
 
 .register-container .form-container{

@@ -64,6 +64,11 @@
 
 .accont a{
     color: var(--color-primary);
+    transition: opacity 0.2s;
+}
+
+.accont a:hover{
+    opacity: 50%;
 }
 
 .login-container footer p:last-child {

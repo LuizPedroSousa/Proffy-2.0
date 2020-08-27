@@ -49,6 +49,12 @@
     flex-direction: column;
 }
 
+
+.title p{
+    font: 400 1.6rem Poppins;
+    color: var(--color-text-in-primary);
+}
+
 .title h2{
     color: var(--color-title-in-primary);
     font: 700 3.6rem Archivo;

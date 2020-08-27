@@ -59,13 +59,13 @@ function Landing() {
                         <img src={studyImage} alt="Estudar" />
                         <p>Estudar</p>
                     </Link>
-                    <a href="#" className="give-classes">
+                    <Link to="give-classes" className="give-classes">
                         <img
                             src={giveClassesImage}
                             alt="Dar Aulas"
                         />
                         <p>Dar Aulas</p>
-                    </a>
+                    </Link>
 
                 </div>
 

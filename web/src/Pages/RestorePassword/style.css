@@ -7,6 +7,14 @@
     padding: 2rem;
 }
 
+.restore-password-container header a{
+    transition: opacity 0.2s;
+}
+
+.restore-password-container header a:hover{
+    opacity: 50%;
+}
+
 .restore-password-content{
     margin-bottom: 1rem;
 }

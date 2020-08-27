@@ -5,7 +5,7 @@ import './style.css';
 import backIcon from '../../Assets/Icons/back.svg';
 import logoImage from '../../Assets/Images/logo.svg';
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 interface PageHeaderProps {
     navTitle: string;
@@ -32,6 +32,7 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
                 <div className="content">
                     <div className="title">
                         <h2>{props.title}</h2>
+                        <p>{props.description}</p>
                     </div>
                     <div className="childrens">
                         {props.children}

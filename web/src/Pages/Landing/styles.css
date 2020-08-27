@@ -20,8 +20,12 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: 0.2s;
 }
 
+#header-container a:first-child:hover{
+    padding-top: 1rem;
+}
 #header-container > a > p{
     color: var(--color-text-in-primary);
 }
@@ -102,10 +106,14 @@
     justify-content: center;
     flex-direction: column;
     border-radius: 0.8rem;
-    transition: background-color 0.2s;
+    transition: 0.2s;
     margin: 2rem 1rem;
     width: 16rem;
     height: 8rem;
+}
+
+.buttons-container a:hover{
+    margin-bottom: 1rem;
 }
 
 .buttons-container a > p{
