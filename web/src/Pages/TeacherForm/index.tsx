@@ -29,15 +29,18 @@ export default function TeacherForm() {
                     <main>
                         <fieldset>
                             <legend>Seus Dados</legend>
-                            <div className="perfil">
-                                <img src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg" alt="Luiz Pedro" />
-                                <p>Luiz Pedro</p>
+                            <div className="perfil-container">
+                                <div className="perfil">
+                                    <img src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg" alt="Luiz Pedro" />
+                                    <p>Luiz Pedro</p>
+                                </div>
+                                <Input
+                                    label="Whatsapp"
+                                    name="whatsapp"
+                                    type="number"
+                                />
                             </div>
-                            <Input
-                                label="Whatsapp"
-                                name="whatsapp"
-                                type="number"
-                            />
+
                             <TextArea
                                 name="bio"
                                 label="Biográfia"
@@ -45,9 +48,9 @@ export default function TeacherForm() {
                                 maxLength={300}
                             />
                         </fieldset>
-                        <fieldset className="select">
+                        <fieldset>
                             <legend>Sobre a aula</legend>
-                            <div>
+                            <div className="select-container-grid">
                                 <Select
                                     label="Matéria"
                                     name="subject"
@@ -75,7 +78,7 @@ export default function TeacherForm() {
                                 Horários Disponiveis
                                 <p>+ Novo horário</p>
                             </legend>
-                            <div>
+                            <div className="last-select-container-grid">
                                 <Select
                                     label="Dia da semana"
                                     name="week_day"

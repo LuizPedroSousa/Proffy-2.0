@@ -100,7 +100,13 @@
     color: var(--color-primary);
     margin-top: 0.5rem;
     font: 600 1.6rem Archivo;
+    cursor: pointer;
     margin-left: 10rem;
+    transition: opacity 0.2s;
+}
+
+.teacher-form-container form main fieldset legend p:hover{
+    opacity: 50%;
 }
 
 .teacher-form-container form footer{
@@ -108,6 +114,7 @@
     padding: 2rem;
     border-bottom-left-radius: 0.8rem;
     border-bottom-right-radius: 0.8rem;
+    border-top: 1px solid var(--color-line-in-white);
 }
 
 .teacher-form-container form footer div{
@@ -139,11 +146,92 @@
     font: 600 1.6rem Archivo;
     border-radius: 0.8rem;
     margin: 2rem 0;
-    transition: 0.2s;
+    transition: 0.4s;
     cursor: pointer;
 }
 
 .teacher-form-container form footer button:hover{
     background-color: var(--color-secondary-dark);
-    margin: 4rem 0;
+    margin: 1rem 0;
+}
+
+@media(min-width: 1120px){
+    .teacher-form-container .content-container .title h2{
+        max-width: 40rem;
+    }
+
+    .teacher-form-container .content-container .title p{
+        max-width: 35rem;
+    }
+
+    .teacher-form-container .content-container .childrens{
+        margin-top: 8rem;
+    }
+
+    .teacher-form-container form{
+        max-width: 75rem;
+        margin-top: 5rem;
+    }
+
+    .teacher-form-container form fieldset:first-child .perfil-container{
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+    }
+
+    .teacher-form-container fieldset legend{
+        padding-bottom: 2rem;
+    }
+
+    .teacher-form-container form main,
+    .teacher-form-container form footer{
+        padding: 6rem;
+    }
+
+    .teacher-form-container form .perfil img{
+        width: 8rem;
+        height: 8rem;
+        margin-right: 4rem;
+    }
+
+    .teacher-form-container form .perfil-container .input-block{
+        margin-bottom: 2rem;
+    }
+
+    .teacher-form-container fieldset + fieldset{
+        margin: 8rem 0;
+    }
+    
+    .teacher-form-container form fieldset:last-child{
+        margin-bottom: 1rem;
+    }
+
+    .teacher-form-container form .select-container-grid{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 3rem;
+        margin-top: 2rem;
+    }
+
+    .teacher-form-container form .last-select-container-grid{
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-gap: 1.5rem;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .teacher-form-container form .last-select-container-grid .input-block:last-child{
+        margin-top: 0;
+    }
+
+    .teacher-form-container form footer{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .teacher-form-container form footer button{
+        margin: 0;
+    }
+
 }

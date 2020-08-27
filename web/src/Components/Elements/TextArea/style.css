@@ -43,3 +43,15 @@
     bottom: 92rem;
     left: 5rem;
 }
+
+@media(min-width: 1120px){
+    .text-area-block textarea{
+        height: 16.8rem;
+    }
+
+    .text-area-block:focus-within::before{
+        bottom: 95.7rem;
+        left: 10rem;
+        width: calc(100% - 20rem);
+    }
+}
