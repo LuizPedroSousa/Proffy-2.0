@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
 
-import './style.css'
 import Form from './../../Components/Login/Form/index';
 import Proffy from './../../Components/Login/Proffy/index';
 import InputForm from './../../Components/Elements/InputForm/index';
 
 import backIcon from '../../Assets/Icons/backPurple.svg';
 import { Link } from 'react-router-dom';
+import { RegisterContainer, Header } from './styled';
 
 function Register() {
     const [viewPassword, setViewPassword] = useState(false);
@@ -19,13 +19,13 @@ function Register() {
         }
     }
     return (
-        <div className="register-container">
-            <div className="register-content">
-                <header>
+        <RegisterContainer>
+            <div>
+                <Header>
                     <Link to="/login">
                         <img src={backIcon} alt="Voltar" />
                     </Link>
-                </header>
+                </Header>
                 <section>
                     <Form
                         title="Cadastro"
@@ -71,7 +71,7 @@ function Register() {
                 </section>
             </div>
             <Proffy />
-        </div>
+        </RegisterContainer>
     );
 }
 

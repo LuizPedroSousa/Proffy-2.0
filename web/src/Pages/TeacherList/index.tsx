@@ -4,7 +4,7 @@ import PageHeader from '../../Components/PageHeader';
 import smileIcon from '../../Assets/Icons/smile.svg';
 
 import {
-    TeachersContainer,
+    TeacherListContainer,
     DescriptionContent,
     Filter,
     NoneFilter,
@@ -30,7 +30,7 @@ function TeacherList() {
     }
 
     return (
-        <TeachersContainer className="teachers-container">
+        <TeacherListContainer className="teachers-container">
             <PageHeader
                 title="Estes são os proffys disponíveis."
                 navTitle="Estudar"
@@ -232,7 +232,7 @@ function TeacherList() {
                     />
                 </TeacherItem>
             </main>
-        </TeachersContainer>
+        </TeacherListContainer>
     );
 }
 export default TeacherList;

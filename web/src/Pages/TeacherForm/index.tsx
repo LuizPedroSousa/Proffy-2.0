@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-    Container,
+    TeacherFormContainer,
     Form,
     Perfil,
     Fieldset,
@@ -20,7 +20,7 @@ import Select from './../../Components/Elements/Select/index';
 
 export default function TeacherForm() {
     return (
-        <Container className="teacher-form-container">
+        <TeacherFormContainer>
             <PageHeader
                 navTitle="Dar Aulas"
                 title="Que incrível que você quer dar aulas."
@@ -130,6 +130,6 @@ export default function TeacherForm() {
                     </Footer>
                 </Form>
             </section>
-        </Container>
+        </TeacherFormContainer>
     );
 }

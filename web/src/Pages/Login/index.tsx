@@ -6,7 +6,7 @@ import InputForm from './../../Components/Elements/InputForm/index';
 import { Link } from 'react-router-dom';
 
 import {
-    Container,
+    LoginContainer,
     OptionsLogin,
     Footer,
 } from './styled';
@@ -30,7 +30,7 @@ function Login() {
         }
     }
     return (
-        <Container>
+        <LoginContainer>
             <Proffy />
             <section>
                 <Form
@@ -80,14 +80,14 @@ function Login() {
                     </OptionsLogin>
                 </Form>
                 <Footer>
-                    <div className="accont">
+                    <div>
                         <p>Não tem conta?</p>
                         <Link to="/register">Cadastre-se</Link>
                     </div>
                     <p>É de graça <span><i className="fas fa-heart"></i></span></p>
                 </Footer>
             </section>
-        </Container>
+        </LoginContainer>
     );
 }
 

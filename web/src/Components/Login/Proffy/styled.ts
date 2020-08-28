@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const PageHeaderContainer = styled.div`
     background-color: var(--color-primary);
     background-repeat: no-repeat;
     background-size: 85%;

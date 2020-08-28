@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const LoginContainer = styled.div`
     height: 100vh;
     width: 100vw;
     @media(min-width: 1120px){
