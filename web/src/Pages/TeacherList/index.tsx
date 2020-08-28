@@ -3,13 +3,17 @@ import PageHeader from '../../Components/PageHeader';
 
 import smileIcon from '../../Assets/Icons/smile.svg';
 
-import './style.css'
+import {
+    TeachersContainer,
+    DescriptionContent,
+    Filter,
+    NoneFilter,
+    Form,
+} from './styled';
 import Select from './../../Components/Elements/Select/index';
 import Input from './../../Components/Elements/Input/index';
 import TeacherItem from './../../Components/TeacherItem/index';
 import TimeCard from './../../Components/TimeCard/index';
-import ReactDOM from 'react-dom';
-
 
 function TeacherList() {
     const [searchTeachers, setSearchTeachers] = useState(false);
@@ -26,36 +30,45 @@ function TeacherList() {
     }
 
     return (
-        <div className="teachers-container">
+        <TeachersContainer className="teachers-container">
             <PageHeader
                 title="Estes são os proffys disponíveis."
                 navTitle="Estudar"
             >
                 <div className="description-container">
-                    <div className="description-content">
+                    <DescriptionContent>
                         <img src={smileIcon} alt="Emote Sorrindo" />
                         <p>Nós temos 32 professores.</p>
                         {!searchTeachers &&
-                            <button id="filter" onClick={handleSearchTeachers}>
+                            <Filter onClick={handleSearchTeachers}>
                                 <span
                                     className="iconify"
                                     data-icon="mdi-filter-plus"
                                     data-inline="false">
                                 </span>
-                            </button>
+                            </Filter>
                         }
                         {
                             searchTeachers &&
-                            <button id="none-filter" onClick={handleSearchTeachers}>
+                            <NoneFilter onClick={handleSearchTeachers}>
                                 <span
                                     className="iconify"
                                     data-icon="clarity:filter-off-solid"
                                     data-inline="false">
                                 </span>
-                            </button>
+                            </NoneFilter>
                         }
-                    </div>
-                    {searchTeachers && <form id="search-teachers" onSubmit={handleToggleSubmit}>
+                    </DescriptionContent>
+                    <Form 
+                        onSubmit={handleToggleSubmit} 
+                        style={
+                            !searchTeachers 
+                            ? 
+                            {visibility: "hidden"} 
+                            : 
+                            {visibility: "visible"}
+                        }
+                    >
                         <Select
                             name="subject"
                             label="Matéria"
@@ -94,11 +107,12 @@ function TeacherList() {
                         <button>
                             <span><i className="fab fa-searchengin"></i></span>
                         </button>
-                    </form>
-                    }
+                    </Form>
                 </div>
             </PageHeader>
-            <main>
+            <main
+                style={!searchTeachers ? { top: "-6rem" } : { top: "6rem" }}
+            >
                 <TeacherItem
                     name="Henrique"
                     bio="Hmm Café Docinhu."
@@ -204,7 +218,7 @@ function TeacherList() {
                     />
                 </TeacherItem>
             </main>
-        </div>
+        </TeachersContainer>
     );
 }
 export default TeacherList;
