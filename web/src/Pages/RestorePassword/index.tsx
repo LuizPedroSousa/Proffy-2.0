@@ -6,17 +6,21 @@ import Form from './../../Components/Login/Form/index';
 import InputForm from '../../Components/Elements/InputForm';
 import Proffy from '../../Components/Login/Proffy';
 
-import './style.css'
+import {
+    RestorePasswordContainer,
+    Header,
+    RestorePasswordContent,
+} from './styled'
 
 function RestorePassword() {
     return (
-        <div className="restore-password-container">
-            <div className="restore-password-content">
-                <header>
+        <RestorePasswordContainer>
+            <RestorePasswordContent>
+                <Header>
                     <Link to="/login">
                         <img src={backIcon} alt="Voltar" />
                     </Link>
-                </header>
+                </Header>
                 <section>
                     <Form
                         title="Eita, esqueceu sua senha?"
@@ -30,9 +34,9 @@ function RestorePassword() {
                         />
                     </Form>
                 </section>
-            </div>
+            </RestorePasswordContent>
             <Proffy />
-        </div>
+        </RestorePasswordContainer>
     );
 }
 
