@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import { ContainerChildrens } from '../../Components/PageHeader/styled'
-
 export const TeachersContainer = styled.div`
     width: 100vw;
     height: 100vh;
@@ -19,22 +17,9 @@ export const TeachersContainer = styled.div`
             max-width: 35rem;
         }
     }
-
-    .childrens{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        margin-top: 3rem;
-        @media(min-width: 1120px){
-            margin-top: 0;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-    }
     
     .content-container{
-        height: 61rem;
+        transition: height 0.8s;
         @media(min-width:1120px){
             padding-bottom: 8rem;
             z-index: 2           
@@ -125,6 +110,7 @@ export const NoneFilter = styled.button`
 `;
 
 export const Form = styled.form`
+    position: relative;
     button{
         display: flex;
         align-items: center;

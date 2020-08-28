@@ -1,6 +1,14 @@
 import React from 'react';
 
-import './style.css';
+import {
+    Container,
+    Form,
+    Perfil,
+    Fieldset,
+    Footer,
+    GridContainer,
+    LastGridContainer,
+} from './styled';
 import PageHeader from '../../Components/PageHeader';
 
 import rocketIcon from '../../Assets/Icons/rocket.svg';
@@ -12,7 +20,7 @@ import Select from './../../Components/Elements/Select/index';
 
 export default function TeacherForm() {
     return (
-        <div className="teacher-form-container">
+        <Container className="teacher-form-container">
             <PageHeader
                 navTitle="Dar Aulas"
                 title="Que incrível que você quer dar aulas."
@@ -25,12 +33,12 @@ export default function TeacherForm() {
                 <img src={rocketIcon} alt="Foguete" />
             </PageHeader>
             <section>
-                <form>
+                <Form>
                     <main>
                         <fieldset>
                             <legend>Seus Dados</legend>
-                            <div className="perfil-container">
-                                <div className="perfil">
+                            <Perfil>
+                                <div>
                                     <img src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg" alt="Luiz Pedro" />
                                     <p>Luiz Pedro</p>
                                 </div>
@@ -39,7 +47,7 @@ export default function TeacherForm() {
                                     name="whatsapp"
                                     type="number"
                                 />
-                            </div>
+                            </Perfil>
 
                             <TextArea
                                 name="bio"
@@ -50,7 +58,7 @@ export default function TeacherForm() {
                         </fieldset>
                         <fieldset>
                             <legend>Sobre a aula</legend>
-                            <div className="select-container-grid">
+                            <GridContainer>
                                 <Select
                                     label="Matéria"
                                     name="subject"
@@ -71,14 +79,14 @@ export default function TeacherForm() {
                                     label="Custo da sua aula por hora"
                                     name="price"
                                 />
-                            </div>
+                            </GridContainer>
                         </fieldset>
-                        <fieldset>
+                        <Fieldset>
                             <legend>
                                 Horários Disponiveis
                                 <p>+ Novo horário</p>
                             </legend>
-                            <div className="last-select-container-grid">
+                            <LastGridContainer>
                                 <Select
                                     label="Dia da semana"
                                     name="week_day"
@@ -102,10 +110,10 @@ export default function TeacherForm() {
                                     label="Até"
                                     type="time"
                                 />
-                            </div>
-                        </fieldset>
+                            </LastGridContainer>
+                        </Fieldset>
                     </main>
-                    <footer>
+                    <Footer>
                         <div>
                             <img
                                 src={importantIcon}
@@ -119,9 +127,9 @@ export default function TeacherForm() {
                         <button type="submit">
                             Salvar Cadastro
                             </button>
-                    </footer>
-                </form>
+                    </Footer>
+                </Form>
             </section>
-        </div>
+        </Container>
     );
 }

@@ -34,6 +34,13 @@ function TeacherList() {
             <PageHeader
                 title="Estes são os proffys disponíveis."
                 navTitle="Estudar"
+                styles={
+                    !searchTeachers
+                        ?
+                        { height: "25rem" }
+                        :
+                        { height: "60rem" }
+                }
             >
                 <div className="description-container">
                     <DescriptionContent>
@@ -59,14 +66,21 @@ function TeacherList() {
                             </NoneFilter>
                         }
                     </DescriptionContent>
-                    <Form 
-                        onSubmit={handleToggleSubmit} 
+                    <Form
+                        onSubmit={handleToggleSubmit}
                         style={
-                            !searchTeachers 
-                            ? 
-                            {visibility: "hidden"} 
-                            : 
-                            {visibility: "visible"}
+                            !searchTeachers
+                                ?
+                                {
+                                    opacity: "0%",
+                                    transition: "0.8s",
+
+                                }
+                                :
+                                {
+                                    opacity: "100%",
+                                    transition: "0.5s",
+                                }
                         }
                     >
                         <Select

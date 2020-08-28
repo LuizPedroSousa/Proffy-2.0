@@ -4,7 +4,8 @@ import {
     Container,
     Header,
     ContainerChildrens,
-    Content
+    Content,
+    Childrens
 } from './styled';
 
 import backIcon from '../../Assets/Icons/back.svg';
@@ -16,6 +17,7 @@ interface PageHeaderProps {
     navTitle: string;
     title: string;
     description?: string;
+    styles?: object;
 }
 
 const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
@@ -33,15 +35,15 @@ const PageHeader: React.FunctionComponent<PageHeaderProps> = (props) => {
                     <img src={logoImage} alt="Proffy" />
                 </div>
             </Header>
-            <ContainerChildrens className="content-container">
+            <ContainerChildrens className="content-container" style={props.styles}>
                 <Content className="content">
                     <div>
                         <h2>{props.title}</h2>
                         <p>{props.description}</p>
                     </div>
-                    <div className="childrens">
+                    <Childrens className="childrens">
                         {props.children}
-                    </div>
+                    </Childrens>
                 </Content>
             </ContainerChildrens>
         </Container>

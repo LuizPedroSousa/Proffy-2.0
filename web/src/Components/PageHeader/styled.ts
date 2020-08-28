@@ -74,3 +74,16 @@ export const Content = styled.div`
         margin-top: 5rem;
     }
 `;
+
+export const Childrens = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3rem;
+    @media(min-width: 1120px){
+        margin-top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+`
