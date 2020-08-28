@@ -50,7 +50,7 @@
     }
 
     .text-area-block:focus-within::before{
-        bottom: 95.7rem;
+        bottom: 74.7rem;
         left: 10rem;
         width: calc(100% - 20rem);
     }

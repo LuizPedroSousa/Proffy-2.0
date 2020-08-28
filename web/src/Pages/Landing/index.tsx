@@ -9,16 +9,22 @@ import studyImage from '../../Assets/Icons/study.svg';
 
 import giveClassesImage from '../../Assets/Icons/give-classes.svg';
 
-import './styles.css';
+import { 
+    Container, 
+    PageLandingContent, 
+    HeaderContainer,
+    LogoContainer,
+    Footer
+} from './styled';
 import { Link } from 'react-router-dom';
 
 function Landing() {
     return (
-        <div id="page-landing" className="page-landing" >
-            <div id="page-landing-content">
-                <header id="header-container" className="container">
+        <Container>
+            <PageLandingContent>
+                <HeaderContainer>
 
-                    <a href="">
+                    <a href="#">
                         <img
                             src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
                             alt=""
@@ -31,35 +37,34 @@ function Landing() {
                     >
                         <span><i className="fas fa-power-off"></i></span>
                     </a>
+                </HeaderContainer>
 
-                </header>
+                <LogoContainer>
 
-                <div className="logo-container">
-
-                    <div className="logo-content">
+                    <div>
                         <img src={logoImage} alt="Proffy" />
                         <h2>Sua plataforma de estudos online</h2>
                     </div>
-                    <img className="hero-image" src={hero} alt="hero" />
+                    <img src={hero} alt="hero" />
 
-                </div>
+                </LogoContainer>
 
-            </div>
+            </PageLandingContent>
 
-            <section className="semi-footer">
+            <Footer>
 
-                <div className="text-content">
+                <div>
                     <h2>Seja bem-vindo !</h2>
                     <strong>O que você deseja fazer ?</strong>
                 </div>
 
-                <div className="buttons-container">
+                <div>
 
-                    <Link to="/study" className="study">
+                    <Link to="/study">
                         <img src={studyImage} alt="Estudar" />
                         <p>Estudar</p>
                     </Link>
-                    <Link to="give-classes" className="give-classes">
+                    <Link to="give-classes">
                         <img
                             src={giveClassesImage}
                             alt="Dar Aulas"
@@ -69,15 +74,15 @@ function Landing() {
 
                 </div>
 
-                <div className="connections">
+                <div>
                     <p>
                         Total de 285 conexôes
                         
                     </p>
                     <span> já realizadas <i className="fas fa-heart"></i></span>
                 </div>
-            </section>
-        </div>
+            </Footer>
+        </Container>
     );
 }
 
