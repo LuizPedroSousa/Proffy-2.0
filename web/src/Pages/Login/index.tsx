@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 
-import './style.css'
 import Proffy from './../../Components/Login/Proffy/index';
 import Form from './../../Components/Login/Form/index';
 import InputForm from './../../Components/Elements/InputForm/index';
 import { Link } from 'react-router-dom';
 
-
+import {
+    Container,
+    OptionsLogin,
+    Footer,
+} from './styled';
 
 function Login() {
     const [checkbox, setCheckbox] = useState(false);
@@ -27,7 +30,7 @@ function Login() {
         }
     }
     return (
-        <div className="login-container">
+        <Container>
             <Proffy />
             <section>
                 <Form
@@ -60,7 +63,7 @@ function Login() {
                         }
                     </InputForm>
 
-                    <div className="options-login">
+                    <OptionsLogin>
                         {
                             checkbox ?
                                 <span
@@ -74,17 +77,17 @@ function Login() {
                         }
                         <label onClick={toggleCheckboxRemember}>Lembrar-me</label>
                         <Link to="restore-password">Esqueci minha senha</Link>
-                    </div>
+                    </OptionsLogin>
                 </Form>
-                <footer>
+                <Footer>
                     <div className="accont">
                         <p>Não tem conta?</p>
                         <Link to="/register">Cadastre-se</Link>
                     </div>
                     <p>É de graça <span><i className="fas fa-heart"></i></span></p>
-                </footer>
+                </Footer>
             </section>
-        </div>
+        </Container>
     );
 }
 
