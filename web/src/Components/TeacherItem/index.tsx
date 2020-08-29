@@ -1,6 +1,13 @@
 import React from 'react';
 
-import './style.css'
+import {
+    TeacherItemContainer,
+    Header,
+    Section,
+    Footer,
+    TextContent,
+    Childrens
+} from './styled'
 
 export interface TeacherItemProps {
     id: number;
@@ -14,33 +21,33 @@ export interface TeacherItemProps {
 
 const TeacherItem: React.FunctionComponent<TeacherItemProps> = (props) => {
     return (
-        <article className="teacher-item">
-            <header>
+        <TeacherItemContainer>
+            <Header>
                 <img src={props.avatar} alt="Luiz" />
                 <div>
                     <strong>{props.name}</strong>
                     <p>{props.subject}</p>
                 </div>
-            </header>
-            <section>
+            </Header>
+            <Section>
                 <p>{props.bio}</p>
-                <div>
+                <Childrens>
                     {props.children}
-                </div>
-            </section>
-            <footer>
-                <div className="text">
+                </Childrens>
+            </Section>
+            <Footer>
+                <TextContent>
                     <p>Preço/hora</p>
                     <strong>{`R$ ${props.price}`}</strong>
-                </div>
+                </TextContent>
                 <a href="#">
                     <span>
                         <i className="fab fa-whatsapp"></i>
                     </span>
                     <p>Entrar em contato</p>
                 </a>
-            </footer>
-        </article>
+            </Footer>
+        </TeacherItemContainer>
     );
 }
 

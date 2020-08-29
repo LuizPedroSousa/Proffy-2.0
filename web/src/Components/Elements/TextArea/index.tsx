@@ -1,6 +1,8 @@
 import React, { TextareaHTMLAttributes } from 'react';
 
-import './style.css'
+import {
+    TextAreaContainer,
+} from './styled'
 
 interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     name: string;
@@ -10,15 +12,15 @@ interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 
 const TextArea: React.FunctionComponent<TextAreaProps> = ({ name, label, description, ...rest }) => {
     return (
-        <div className="text-area-block">
+        <TextAreaContainer className="text-area-block">
             <div>
                 <label htmlFor={name}>{label}</label>
                 <p>{description}</p>
             </div>
             <textarea name={name} {...rest}>
-                
+
             </textarea>
-        </div>
+        </TextAreaContainer>
     );
 }
 

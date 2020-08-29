@@ -1,6 +1,6 @@
 import React, { HtmlHTMLAttributes, useState } from 'react';
 
-import './style.css';
+import {InputFormContainer} from './styled';
 
 interface InputFormProps extends HtmlHTMLAttributes<HTMLInputElement> {
     label: string;
@@ -11,7 +11,7 @@ interface InputFormProps extends HtmlHTMLAttributes<HTMLInputElement> {
 const InputForm: React.FunctionComponent<InputFormProps> = (props, ...rest) => {
     const [inputChangeLabel, setInputChangeLabel] = useState('');
     return (
-        <div className="input-form-block">
+        <InputFormContainer className="input-form-block">
             <label 
                 htmlFor={props.name}
                 style={
@@ -35,7 +35,7 @@ const InputForm: React.FunctionComponent<InputFormProps> = (props, ...rest) => {
                 onChange={e => setInputChangeLabel(e.target.value)}
             />
             {props.children}
-        </div>
+        </InputFormContainer>
     );
 }
 export default InputForm;

@@ -1,6 +1,9 @@
 import React from 'react'
 
-import './style.css'
+import {
+    TimeCardContainer,
+    Hours,
+} from './styled'
 
 interface TimeCardProps {
     time: Array<{
@@ -15,20 +18,20 @@ interface TimeCardProps {
 
 const TimeCard: React.FunctionComponent<TimeCardProps> = ({ time, week_day }) => {
     return (
-        <div className="time-card">
+        <TimeCardContainer>
             <div>
                 <p>Dia</p>
                 <strong>{week_day.map(week => {
                     return week.label
                 })}</strong>
-                <p className="hours">Horário</p>
+                <Hours >Horário</Hours>
                 <strong>
                     {`${time.map(tempo => { return tempo.from })}h
                  - ${time.map(tempo => {
                         return tempo.to
                     })}h`}</strong>
             </div>
-        </div>
+        </TimeCardContainer>
     );
 }
 

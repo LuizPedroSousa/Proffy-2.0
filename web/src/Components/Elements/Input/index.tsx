@@ -1,6 +1,9 @@
 import React, { InputHTMLAttributes } from 'react';
 
-import './style.css'
+import {
+    InputContainer
+
+} from './styled'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
@@ -10,7 +13,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input: React.FunctionComponent<InputProps> = ({ name, label, children, ...rest }) => {
     return (
-        <div className="input-block">
+        <InputContainer className="input-block">
             <label htmlFor={name}>{label}</label>
             <input
                 type="text"
@@ -18,7 +21,7 @@ const Input: React.FunctionComponent<InputProps> = ({ name, label, children, ...
                 {...rest}
             />
             {children}
-        </div>
+        </InputContainer>
     );
 }
 

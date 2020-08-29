@@ -1,6 +1,9 @@
 import React, { FormEvent } from 'react'
 
-import './style.css'
+import {
+    FormContainer,
+    Forms,
+} from './styled'
 
 interface FormProps {
     title: string;
@@ -14,16 +17,16 @@ const Form: React.FunctionComponent<FormProps> = ({ children, title, buttonName,
         e.preventDefault();
     }
     return (
-        <div className="form-container">
-            <form className="form" onSubmit={enterAcount}>
+        <FormContainer>
+            <Forms onSubmit={enterAcount}>
                 <strong>{title}</strong>
                 <p>{description}</p>
                 {children}
                 <button type="submit">
                     {buttonName}
                 </button>
-            </form>
-        </div>
+            </Forms>
+        </FormContainer>
     );
 }
 
