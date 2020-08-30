@@ -2,18 +2,18 @@ import React from 'react';
 
 import {
     TeacherFormContainer,
-    Form,
-    Perfil,
-    Fieldset,
-    Footer,
-    GridContainer,
-    LastGridContainer,
+    GridContainer1,
+    GridContainer2,
+    GridContainer3,
 } from './styled';
 import PageHeader from '../../Components/PageHeader';
 
 import rocketIcon from '../../Assets/Icons/rocket.svg';
 import importantIcon from '../../Assets/Icons/important.svg';
 
+import Footer from '../../Components/Elements/Footer';
+import Form from '../../Components/Elements/Form';
+import Fieldset from '../../Components/Elements/Fieldset';
 import Input from './../../Components/Elements/Input/index';
 import TextArea from './../../Components/Elements/TextArea/index';
 import Select from './../../Components/Elements/Select/index';
@@ -33,101 +33,88 @@ export default function TeacherForm() {
                 <img src={rocketIcon} alt="Foguete" />
             </PageHeader>
             <section>
-                <Form>
-                    <main>
-                        <fieldset>
-                            <legend>Seus Dados</legend>
-                            <Perfil>
-                                <div>
-                                    <img src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg" alt="Luiz Pedro" />
-                                    <p>Luiz Pedro</p>
-                                </div>
-                                <Input
-                                    label="Whatsapp"
-                                    name="whatsapp"
-                                    type="number"
+                <Form classes="form">
+                    <Fieldset title="Seus Dados">
+                        <GridContainer1>
+                            <div>
+                                <img
+                                    src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
+                                    alt="Avatar"
                                 />
-                            </Perfil>
-
-                            <TextArea
-                                name="bio"
-                                label="Biográfia"
-                                description="(Máximo 300 caracteres)"
-                                maxLength={300}
+                                <strong>Luiz Pedro</strong>
+                            </div>
+                            <Input
+                                name="whatsapp"
+                                label="Whatsapp"
+                                type="number"
                             />
-                        </fieldset>
-                        <fieldset>
-                            <legend>Sobre a aula</legend>
-                            <GridContainer>
-                                <Select
-                                    label="Matéria"
-                                    name="subject"
-                                    padrao="Selecione qual matéria você quer ensinar"
-                                    options={[
-                                        { value: "Matemática", label: "Matemática" },
-                                        { value: "Fisica", label: "Fisica" },
-                                        { value: "Artes", label: "Artes" },
-                                        { value: "Geografia", label: "Geografia" },
-                                        { value: "Filosofia", label: "Filosofia" },
-                                        { value: "Ciências", label: "Ciências" },
-                                        { value: "Inglês", label: "Inglês" },
-                                        { value: "Biologia", label: "Biologia" },
-                                        { value: "Quimica", label: "Quimica" },
-                                    ]}
-                                />
-                                <Input
-                                    label="Custo da sua aula por hora"
-                                    name="price"
-                                />
-                            </GridContainer>
-                        </fieldset>
-                        <Fieldset>
-                            <legend>
-                                Horários Disponiveis
-                                <p>+ Novo horário</p>
-                            </legend>
-                            <LastGridContainer>
-                                <Select
-                                    label="Dia da semana"
-                                    name="week_day"
-                                    padrao="Selecione o dia"
-                                    options={[
-                                        { value: "0", label: "Domingo" },
-                                        { value: "1", label: "Segunda-feira" },
-                                        { value: "2", label: "Terça-feira" },
-                                        { value: "3", label: "Quarta-feira" },
-                                        { value: "4", label: "Quinta-feira" },
-                                        { value: "5", label: "Sexta-feira" },
-                                    ]}
-                                />
-                                <Input
-                                    name="from"
-                                    label="Das"
-                                    type="time"
-                                />
-                                <Input
-                                    name="to"
-                                    label="Até"
-                                    type="time"
-                                />
-                            </LastGridContainer>
-                        </Fieldset>
-                    </main>
-                    <Footer>
-                        <div>
-                            <img
-                                src={importantIcon}
-                                alt="Aviso"
+                        </GridContainer1>
+                        <TextArea
+                            label="Biográfia"
+                            description="(Máximo 300 caracteres)"
+                            name="bio"
+                        />
+                    </Fieldset>
+                    <Fieldset title="Sobre a aula">
+                        <GridContainer2>
+                            <Select
+                                name="subject"
+                                padrao="Selecione uma matéria"
+                                options={[
+                                    { value: "Matemática", label: "Matemática" },
+                                    { value: "Fisica", label: "Fisica" },
+                                    { value: "Artes", label: "Artes" },
+                                    { value: "Geografia", label: "Geografia" },
+                                    { value: "Filosofia", label: "Filosofia" },
+                                    { value: "Ciências", label: "Ciências" },
+                                    { value: "Inglês", label: "Inglês" },
+                                    { value: "Biologia", label: "Biologia" },
+                                    { value: "Quimica", label: "Quimica" },
+                                ]}
+                                label="Matéria"
                             />
-                            <p>
-                                Importante!
-                                    <p>Preencha todos os dados corretamente.</p>
-                            </p>
-                        </div>
-                        <button type="submit">
-                            Salvar Cadastro
-                            </button>
-                    </Footer>
+                            <Input 
+                                type="number"
+                                label="Custo da sua aula por hora"
+                                name="price"
+                            />
+                        </GridContainer2>
+                    </Fieldset>
+                    <Fieldset
+                        title="Horários disponiveis"
+                        complement="+ Novo horário"
+                        classes="lastchild"
+                    >
+                        <GridContainer3>
+                            <Select
+                                name="week_day"
+                                padrao="Selecione um dia"
+                                options={[
+                                    { value: "0", label: "Domingo" },
+                                    { value: "1", label: "Segunda-feira" },
+                                    { value: "2", label: "Terça-feira" },
+                                    { value: "3", label: "Quarta-feira" },
+                                    { value: "4", label: "Quinta-feira" },
+                                    { value: "5", label: "Sexta-feira" },
+                                    { value: "6", label: "Sabado" },
+                                ]}
+                                label="Dia da semana"
+                            />
+                            <Input
+                                name="from"
+                                label="Das"
+                                type="number"
+                            />
+                            <Input
+                                name="to"
+                                label="Até"
+                                type="number"
+                            />
+                        </GridContainer3>
+                    </Fieldset>
+                    <Footer
+                        buttonName="Salvar Cadastro"
+                    />
                 </Form>
             </section>
         </TeacherFormContainer>

@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom'
 
 interface PageHeaderProps {
     navTitle: string;
-    title: string;
+    title?: string;
     description?: string;
     styles?: object;
 }

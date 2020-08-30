@@ -37,7 +37,6 @@ export const Header = styled.header`
     }
     @media(min-width: 1120px){
         margin: 0 11rem;
-        margin: 0 10rem;
         padding-top: 0;
     }
 `;

@@ -7,6 +7,7 @@ import Login from './Pages/Login/index';
 import Register from './Pages/Register/index';
 import RestorePassword from './Pages/RestorePassword/index';
 import TeacherForm from './Pages/TeacherForm/index';
+import PerfilUser from './Pages/PerfilUser/index';
 
 function Router() {
     return (
@@ -16,7 +17,8 @@ function Router() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route path="/restore-password" component={RestorePassword} />
-            <Route path ="/give-classes" component={TeacherForm}/>
+            <Route path="/give-classes" component={TeacherForm} />
+            <Route path="/perfil" component={PerfilUser} />
         </BrowserRouter>
     );
 }

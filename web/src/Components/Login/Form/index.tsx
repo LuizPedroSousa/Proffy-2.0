@@ -17,8 +17,8 @@ const Form: React.FunctionComponent<FormProps> = ({ children, title, buttonName,
         e.preventDefault();
     }
     return (
-        <FormContainer>
-            <Forms onSubmit={enterAcount}>
+        <FormContainer className="form-container">
+            <Forms className="form" onSubmit={enterAcount}>
                 <strong>{title}</strong>
                 <p>{description}</p>
                 {children}

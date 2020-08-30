@@ -24,13 +24,13 @@ function Landing() {
             <PageLandingContent>
                 <HeaderContainer>
 
-                    <a href="#">
+                    <Link to="perfil">
                         <img
                             src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
                             alt=""
                         />
                         <p>Luiz Pedro</p>
-                    </a>
+                    </Link>
                     <a
                         href="#"
                         className="buttonPower"
