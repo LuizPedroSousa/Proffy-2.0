@@ -1,5 +1,33 @@
-# Proffy-2.0
+<p align="center">
+    <img 
+        src="./web/src/Assets/.GitHub/Proffy.svg" alt="proffy"
+    />
+</p>
+<p align="center">
+    🚀
+    Project designed to connect teachers with students.
+</p>
 
-## Sobre
+#
+<br>
+<h2 align="center">Preview</h2>
+<br>
+<p align="left">
+    <img 
+        src="./web/src/Assets/.GitHub/Web.svg"
+        height="20"
+        width="50"
+    />
+    <br>
+    <img 
+        src="./web/src/Assets/.GitHub/proffy.gif"
+    />
+</p>
 
-Este projeto é uma versão 2.0 do Proffy que está sendo recriado com base no layout do Tiago Luchtenberg.
+
+<h1>
+    💻 Technologies
+</h1>
+
+- ReactJs
+- MongoDB
