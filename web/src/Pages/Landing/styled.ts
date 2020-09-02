@@ -1,10 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade, lighten } from 'polished';
 
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
 `
 
 export const PageLandingContent = styled.div`
@@ -66,6 +65,7 @@ export const HeaderContainer = styled.header`
 
 `
 
+
 export const Config = styled.div`
     display: flex;
     justify-content: center;
@@ -79,7 +79,7 @@ export const Config = styled.div`
     background-color: ${props => props.theme.colors.primaryDarker};
     border-radius: 0.8rem;
     top: 2rem;
-    right: 0;
+    right: 0rem;
     position: absolute;
     z-index: 1000;
     @media(min-width: 1120px){
@@ -118,6 +118,7 @@ export const ButtonExit = styled(ButtonTheme)`
         background-color: ${props => shade(0.5, props.theme.colors.secondary)};
     }
 `;
+
 export const Themes = styled.div`
     background-color: ${props => shade(0.2, props.theme.colors.primaryDarker)};
     width: 100%;
@@ -145,13 +146,18 @@ export const ArrowButton = styled.button`
     font-size: 4rem;
     display: flex;
     align-items: center;
+    cursor: pointer;
     justify-content: center;
     border-radius: 0.8rem;
+    transition: 0.5s;
     border: 0;
     outline: 0;
     margin-bottom: 2rem;
     background-color: ${props => shade(0.2, props.theme.colors.buttonThemes)};
     color: ${props => props.theme.colors.buttonText};
+    :hover{
+        background-color: ${props => shade(0.5, props.theme.colors.buttonThemes)};
+    }
 `;
 
 export const LogoContainer = styled.div`

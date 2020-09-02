@@ -25,6 +25,7 @@ import {
     Footer
 } from './styled';
 import { Link } from 'react-router-dom';
+import { config } from 'process';
 
 
 function Landing() {
@@ -57,7 +58,20 @@ function Landing() {
         setConfigs(configs == false ? true : false);
     }
 
+    const offStyleTheme = {
+        height: '0',
+        opacity: "0",
+        right: '1000',
+        zIndex: -1,
+    };
 
+    const offConfigStyle={
+        width: '5.6rem',
+        height: '5.6rem',
+        marginRight: '2rem',
+        opacity: '0%',
+        zIndex: 1,
+    }
     return (
         <Container>
             <PageLandingContent>
@@ -77,17 +91,41 @@ function Landing() {
                         <span><DiAptana/></span>
                     </button>
                 </HeaderContainer>
-                {configs && <Config
+                {!configs 
+                    ? 
+                    <Config 
+                        style={offConfigStyle}
+                    >                    
+                        <ArrowButton
+                            style={
+                                !configs
+                                ?
+                                {transform: 'rotate(180deg)',}
+                                :
+                                {transform: 'rotate(0deg)',}
+                            }
+                            onClick={toggleViewConfigs}
+                        >
+                                <RiArrowRightSLine/>
+                        </ArrowButton>
+                    </Config> 
+                    :
+                    <Config
                     style={
                         viewThemes ? 
                         {height: 'calc(100% - 10rem)'} 
                         : 
-                        {height: 'calc(100% - 30rem)'}
+                        {
+                            height: 'calc(100% - 30rem)',
+                            transition: '1.5s'
+                        }
                     }
                 >
                     <ArrowButton
-                        
-                        onClick={toggleViewConfigs}
+                        onClick={() => {
+                            toggleViewConfigs();
+                            setViewThemes(false);
+                        }}
                     >
                         <RiArrowRightSLine/>
                     </ArrowButton>
@@ -99,12 +137,7 @@ function Landing() {
                     <Themes style=
                         {!viewThemes 
                             ? 
-                            {
-                                height: '0',
-                                opacity: "0",
-                                right: '1000',
-                                zIndex: -1,
-                            } 
+                            {...offStyleTheme}
                             : 
                             {
                                 opacity: "100%",
@@ -122,11 +155,11 @@ function Landing() {
                                 checkedIcon={false}
                                 handleDiameter={30}
                                 onColor={
-                                    lighten(0.5, colors.secondary)
+                                    lighten(0.1, '#04D361')
                                 }
 
                                 offColor={
-                                    shade(0.2,colors.exitButtonFeature)
+                                    shade(0.2, colors.exitButtonFeature)
                                 }
                             />
                             <p>Light</p>
@@ -157,8 +190,7 @@ function Landing() {
                             {top: '0'}
                         }
                     >Sair</ButtonExit>
-                </Config>
-                }
+                </Config>}
                 <LogoContainer>
 
                     <div>
@@ -169,7 +201,7 @@ function Landing() {
 
                 </LogoContainer>
 
-            </PageLandingContent>
+                </PageLandingContent>
 
             <Footer>
 
