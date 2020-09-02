@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const TimeCardContainer = styled.div`
     background: linear-gradient(
-        to right bottom, var(--color-primary) 40%, var(--color-primary-darker)
+        to right bottom, ${props => props.theme.colors.primary} 40%, ${props => props.theme.colors.primaryDarker}
     );
     opacity: 80%;
     padding: 2rem;
@@ -10,18 +10,18 @@ export const TimeCardContainer = styled.div`
     align-items: center;
     justify-content: flex-start;
     border-radius: 0.8rem;
-    border: 1px solid var(--color-line-in-white);
+    border: 1px solid ${props => props.theme.colors.lineInWhite};
     height: 10rem;
     width: 9.5rem;
     p{
         font-size: 1.2rem;
-        color: var(--color-text-in-primary);
+        color: ${props => props.theme.colors.textInPrimary};
         line-height: 1rem;
         margin: 0;
     }
 
     strong{
-        color: var(--color-button-text);
+        color: ${props => props.theme.colors.buttonText};
         font-size: 1.1rem;
     }
 

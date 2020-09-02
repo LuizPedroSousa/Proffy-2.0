@@ -21,8 +21,8 @@ export const Fieldset = styled.fieldset`
 export const Legend = styled.legend`
         padding-top: 2rem;
         font: 600 2.4rem Archivo;
-        color: var(--color-text-title);
-        border-bottom: 1px solid var(--color-line-in-white);
+        color: ${props => props.theme.colors.textTitle};
+        border-bottom: 1px solid ${props => props.theme.colors.lineInWhite};
         width: 100%;
         padding-bottom: 1rem;
         margin-bottom: 1rem;

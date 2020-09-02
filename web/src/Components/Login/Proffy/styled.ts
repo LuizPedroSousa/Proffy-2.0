@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PageHeaderContainer = styled.div`
-    background-color: var(--color-primary);
+    background-color: ${props => props.theme.colors.primary};
     background-repeat: no-repeat;
     background-size: 85%;
     background-position: 2em 2rem;
@@ -15,7 +15,7 @@ export const PageHeaderContainer = styled.div`
     }
 
     div h2{
-        color: var(--color-text-in-primary);
+        color: ${props => props.theme.colors.textInPrimary};
         display: block;
         font: 400 2.8rem Poppins;
         max-width: 28rem;

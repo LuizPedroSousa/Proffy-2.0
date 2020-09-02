@@ -9,6 +9,9 @@ import {
     LoginContainer,
     OptionsLogin,
     Footer,
+    ViewPasswordPrimary,
+    ViewPasswordSecondary,
+    Checkbox
 } from './styled';
 
 function Login() {
@@ -47,38 +50,35 @@ function Login() {
                         name="password"
                         type={!viewPassword ? "password" : "text"}
                     >
-                        {
-                            !viewPassword ?
-                                <span
-                                    onClick={toggleViewPassword}
-                                    style={{ color: "var(--color-text-complement" }}>
-                                    <i className="far fa-eye"></i>
-                                </span>
-                                :
-                                <span
-                                    onClick={toggleViewPassword}
-                                    style={{ color: "var(--color-primary" }}>
-                                    <i className="far fa-eye-slash"></i>
-                                </span>
+                        {!viewPassword ?
+                            <ViewPasswordPrimary onClick={toggleViewPassword}>
+                                <i className="far fa-eye"></i>
+                            </ViewPasswordPrimary>
+
+                            :
+
+                            <ViewPasswordSecondary onClick={toggleViewPassword}>
+                                <i className="far fa-eye-slash"></i>
+                            </ViewPasswordSecondary>
+
                         }
                     </InputForm>
 
                     <OptionsLogin>
                         {
-                            checkbox ?
-                                <span
+                            !checkbox ?
+                                <Checkbox
                                     onClick={toggleCheckboxRemember}
-                                    style={{ backgroundColor: 'var(--color-secondary)' }}
                                 >
                                     <i className="fas fa-check"></i>
-                                </span>
+                                </Checkbox>
                                 :
                                 <span onClick={toggleCheckboxRemember}></span>
                         }
                         <label onClick={toggleCheckboxRemember}>Lembrar-me</label>
                         <Link to="restore-password">Esqueci minha senha</Link>
                     </OptionsLogin>
-                </Form>
+                </Form >
                 <Footer>
                     <div>
                         <p>Não tem conta?</p>
@@ -86,8 +86,8 @@ function Login() {
                     </div>
                     <p>É de graça <span><i className="fas fa-heart"></i></span></p>
                 </Footer>
-            </section>
-        </LoginContainer>
+            </section >
+        </LoginContainer >
     );
 }
 

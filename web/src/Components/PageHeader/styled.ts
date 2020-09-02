@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.header`
-    background-color: var(--color-primary-darker);
+    background-color: ${props => props.theme.colors.primaryDarker};
     div{
         display: flex;
         align-items: center;
@@ -25,7 +25,7 @@ export const Header = styled.header`
     }
 
     div h1{
-        color: var(--color-text-in-primary);
+        color: ${props => props.theme.colors.textInPrimary};
         font: 500 1.6rem Archivo;
     }
 
@@ -41,7 +41,7 @@ export const Header = styled.header`
 `;
 
 export const ContainerChildrens = styled.div`
-    background-color: var(--color-primary);
+    background-color: ${props => props.theme.colors.primary};
     z-index: 1000;
     height: 61rem;
     padding: 1.6rem;
@@ -55,16 +55,16 @@ export const Content = styled.div`
     flex-direction: column;
     div:nth-child(1) p{
         font: 400 1.6rem Poppins;
-        color: var(--color-text-in-primary);
+        color: ${props => props.theme.colors.textInPrimary};
     }
 
     div:nth-child(1) h2{
-        color: var(--color-title-in-primary);
+        color: ${props => props.theme.colors.titleinPrimary};
         font: 700 3.6rem Archivo;
     }
 
     div:nth-child(2) p{
-        color: var(--color-text-in-primary);
+        color: ${props => props.theme.colors.textInPrimary};
     }
 
 

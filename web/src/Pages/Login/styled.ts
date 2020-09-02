@@ -31,13 +31,13 @@ export const OptionsLogin = styled.div`
         justify-content: center;
         width: 2.4rem;
         height: 2.4rem;
-        border: 1px solid var(--color-line-in-white);
-        background-color: var(--color-box-footer);
+        border: 1px solid ${props => props.theme.colors.lineInWhite};
+        background-color: ${props => props.theme.colors.boxFooter};
         border-radius: 0.8rem;
         margin-right: 1rem;
         font-size: 1rem;
         cursor: pointer;
-        color: var(--color-box-base);
+        color: ${props => props.theme.colors.boxBase};
         transition: opacity 0.2s;
         :hover{
             opacity: 50%;
@@ -47,7 +47,7 @@ export const OptionsLogin = styled.div`
     a,
     label{
         font: 400 1.4rem Poppins;
-        color: var(--color-text-complement);
+        color: ${props => props.theme.colors.textComplement};
         transition: opacity 0.2s;
         :hover{
             opacity: 50%;
@@ -76,7 +76,7 @@ export const Footer = styled.footer`
     }
 
     a{
-        color: var(--color-primary);
+        color: ${props => props.theme.colors.primary};
         transition: opacity 0.2s;
         :hover{
             opacity: 50%;
@@ -84,12 +84,12 @@ export const Footer = styled.footer`
     }
 
     p:last-child {
-        color: var(--color-text-complement);
+        color: ${props => props.theme.colors.textComplement};
     }
 
     p span{
         font-size: 1.4rem ;
-        color: var(--color-primary);
+        color: ${props => props.theme.colors.primary};
     }
     @media(min-width: 1120px){
         margin-bottom: 0;
@@ -99,4 +99,16 @@ export const Footer = styled.footer`
     @media(min-width: 411px){
         max-width: 35.7rem;
     }
+`;
+
+export const ViewPasswordPrimary = styled.span`
+    color: ${props => props.theme.colors.textComplement};
+`;
+
+export const ViewPasswordSecondary = styled.span`
+    color: ${props => props.theme.colors.primary};
+`;
+
+export const Checkbox = styled.span`
+    background-color: ${props => props.theme.colors.secondary} !important;
 `;

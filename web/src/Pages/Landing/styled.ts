@@ -1,12 +1,14 @@
 import styled from 'styled-components';
+import { shade, lighten } from 'polished';
 
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 `
 
 export const PageLandingContent = styled.div`
-    background-color: var(--color-primary);
+    background-color: ${props => props.theme.colors.primary};
     padding: 1.8rem;
 `;
 
@@ -32,23 +34,28 @@ export const HeaderContainer = styled.header`
             margin-right: 1rem;
         }
         p{
-            color: var(--color-text-in-primary);
+            color: ${props => props.theme.colors.textInPrimary};
         }
     }
 
-    a:nth-child(2){
+    button{
         width: 4.8rem;
         height: 4.8rem;
-        background-color: var(--color-primary-dark);
+        background-color: ${props => props.theme.colors.primaryDark};
         border-radius: 0.8rem;
-        color: var(--color-text-in-primary);
+        border: 0;
+        outline: 0;
+        color: ${props => props.theme.colors.textInPrimary};
         transition: 0.2s;
+        font-size: 2rem;
+        padding-top: 0.4rem;
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         :hover{
-            background-color: var(--color-primary-darker);
-            color: var(--color-line-in-white);
+            background-color: ${props => props.theme.colors.primaryDarker};
+            color: ${props => props.theme.colors.lineInWhite};
         }
     }
 
@@ -59,7 +66,97 @@ export const HeaderContainer = styled.header`
 
 `
 
+export const Config = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    transition: 0.8s;
+    height: 0;
+    width: calc(100% - 5rem);
+    background-color: ${props => props.theme.colors.primaryDarker};
+    border-radius: 0.8rem;
+    top: 2rem;
+    right: 0;
+    position: absolute;
+    z-index: 1000;
+    @media(min-width: 1120px){
+        max-width: 35rem;
+        height: calc(100% - 5rem)
+    }
+`;
+
+export const ButtonTheme = styled.button`
+    width: 100%;
+    max-width: 20rem;
+    height: 5.6rem;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: ${props => props.theme.colors.buttonThemes};
+    color: ${props => props.theme.colors.buttonText};
+    font: 700 1.8rem Archivo;
+    border-radius: 0.8rem;
+    position: relative;
+    transition:  2s;
+    & + div{
+        margin-top: 1rem;
+    }
+    :hover{
+        background-color:${props => shade(0.5, props.theme.colors.buttonThemes)};
+        color: ${props => shade(0.5, props.theme.colors.buttonText)};
+    }
+`;
+
+export const ButtonExit = styled(ButtonTheme)`
+    margin-top: 2rem;
+    cursor: pointer;
+    background-color: ${props => props.theme.colors.secondary};
+    :hover{
+        background-color: ${props => shade(0.5, props.theme.colors.secondary)};
+    }
+`;
+export const Themes = styled.div`
+    background-color: ${props => shade(0.2, props.theme.colors.primaryDarker)};
+    width: 100%;
+    max-width: 50rem;
+    border-radius: 0.8rem;
+    display: flex;
+    padding: 2rem;
+    align-items: center;
+    flex-direction: column;
+    transition: ease-in 0.5s;
+    p{
+        margin-bottom: 1rem;
+        font: 700 2rem Archivo;
+        color: ${props => props.theme.colors.textInPrimary}
+    }
+
+    p + div {
+        margin-bottom: 2rem;
+    }
+`;
+
+export const ArrowButton = styled.button`
+    height: 5.8rem;
+    width: 5.8rem;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    border: 0;
+    outline: 0;
+    margin-bottom: 2rem;
+    background-color: ${props => shade(0.2, props.theme.colors.buttonThemes)};
+    color: ${props => props.theme.colors.buttonText};
+`;
+
 export const LogoContainer = styled.div`
+    position: relative;
+    z-index: 1;
     margin-top: 1rem;
     div{
         margin: 2rem 0;
@@ -72,7 +169,7 @@ export const LogoContainer = styled.div`
 
     div h2{
         font: 400 2.8rem Poppins;
-        color: var(--color-text-in-primary);
+        color: ${props => props.theme.colors.textInPrimary};
     }
 
     @media(min-width: 1120px){
@@ -146,20 +243,20 @@ export const Footer = styled.section`
     }
 
     div:nth-child(2) a p{
-        color: var(--color-button-text);
+        color: ${props => props.theme.colors.buttonText};
     }
 
     div:nth-child(2) a:nth-child(1){
-        background-color: var(--color-primary);
+        background-color: ${props => props.theme.colors.primary};
         :hover{
-            background-color: var(--color-primary-dark);
+            background-color: ${props => props.theme.colors.primaryDark};
         }
     }
 
     div:nth-child(2) a:nth-child(2){
-        background-color: var(--color-secondary);
+        background-color: ${props => props.theme.colors.secondary};
         :hover{
-            background-color: var(--color-secondary-dark);
+            background-color: ${props => props.theme.colors.secondaryDark};
         }
     }
 
@@ -173,16 +270,16 @@ export const Footer = styled.section`
 
     div:nth-child(3) p{
         font: 400 1.2rem Poppins;
-        color: var(--color-text-complement);
+        color: ${props => props.theme.colors.textComplement};
     }
 
     div:nth-child(3) span{
         font: 400 1.2rem Poppins;
-        color: var(--color-text-complement);
+        color: ${props => props.theme.colors.textComplement};
     }
 
     div:nth-child(3) span i{
-        color: var(--color-primary);
+        color: ${props => props.theme.colors.primary};
         opacity: 0.5;
     }
 

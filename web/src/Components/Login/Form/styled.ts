@@ -10,10 +10,10 @@ export const FormContainer = styled.div`
     }
 `;
 
-export const Forms= styled.form`
+export const Forms = styled.form`
     strong{
         font: 600 3.6rem Poppins ;
-        color: var(--color-text-title);
+        color: ${props => props.theme.colors.textTitle};
         display: block;
         margin-bottom: 2.8rem;
         max-width: 30rem;
@@ -31,14 +31,14 @@ export const Forms= styled.form`
         margin-top: 2rem;
         border: none;
         border-radius: 0.8rem;
-        background-color: var(--color-secondary);
-        color: var(--color-button-text);
+        background-color: ${props => props.theme.colors.secondary};
+        color: ${props => props.theme.colors.buttonText};
         font: 600 1.6rem Archivo;
         transition: background-color 0.2s;
         outline: 0;
         cursor: pointer;
         :hover{
-            background-color: var(--color-secondary-dark);
+            background-color: ${props => props.theme.colors.secondaryDark};
         }
     }
 

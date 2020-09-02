@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 
 import { FormContainer } from './styled';
 
-interface FormProps {
+interface FormProps extends HTMLAttributes<HTMLFormElement> {
     classes?: string;
 }
 
-const Form: React.FunctionComponent<FormProps> = ({ classes, children }) => {
+const Form: React.FunctionComponent<FormProps> = ({ classes, children, ...rest }) => {
     return (
-        <FormContainer className={classes}>
+        <FormContainer
+            {...rest}
+            className={classes}
+        >
             {children}
         </FormContainer>
     );

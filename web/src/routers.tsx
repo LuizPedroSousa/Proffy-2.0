@@ -12,7 +12,7 @@ import PerfilUser from './Pages/PerfilUser/index';
 function Router() {
     return (
         <BrowserRouter>
-            <Route path="/" exact component={Landing} />
+            <Route path="/" exact  component={Landing} />
             <Route path="/study" component={TeacherList} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />

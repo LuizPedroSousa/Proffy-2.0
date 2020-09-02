@@ -1,24 +1,63 @@
-import React from 'react';
-
+import React, {useState, useContext, useEffect} from 'react';
+import {shade, lighten} from 'polished';
 
 import logoImage from '../../Assets/Images/logo.svg';
-
 import hero from '../../Assets/Images/hero.svg';
-
 import studyImage from '../../Assets/Icons/study.svg';
-
 import giveClassesImage from '../../Assets/Icons/give-classes.svg';
 
+import context from '../../Assets/Styles/themes/context';
+import {ThemeContext} from 'styled-components';
+import Switch from 'react-switch';
+
+import {DiAptana} from 'react-icons/di';
+import {RiArrowRightSLine} from 'react-icons/ri';
 import { 
     Container, 
     PageLandingContent, 
     HeaderContainer,
     LogoContainer,
+    Config,
+    Themes,
+    ButtonTheme,
+    ButtonExit,
+    ArrowButton,
     Footer
 } from './styled';
 import { Link } from 'react-router-dom';
 
+
 function Landing() {
+    const {theme,setTheme} = useContext(context);
+
+    const {colors} = useContext(ThemeContext);
+    const [viewThemes, setViewThemes] = useState(false);
+    const [configs, setConfigs] = useState(false);
+    const [dark, setDark] = useState(false);
+    const [light, setLight] = useState(false);
+    
+    const toggleLight = () => {
+        return setLight(theme.title === 'light' ? true : false);
+    }
+
+    const toggleDark = () => {
+        setDark(theme.title == 'dark' ? true : false);
+    }
+
+    useEffect(() => {
+        toggleDark();
+        toggleLight();
+    });
+
+    const toggleViewThemes = () => {
+        setViewThemes(viewThemes == false ? true : false);
+    }
+
+    const toggleViewConfigs = () => {
+        setConfigs(configs == false ? true : false);
+    }
+
+
     return (
         <Container>
             <PageLandingContent>
@@ -31,14 +70,95 @@ function Landing() {
                         />
                         <p>Luiz Pedro</p>
                     </Link>
-                    <a
-                        href="#"
+                    <button
                         className="buttonPower"
+                        onClick={toggleViewConfigs}
                     >
-                        <span><i className="fas fa-power-off"></i></span>
-                    </a>
+                        <span><DiAptana/></span>
+                    </button>
                 </HeaderContainer>
+                {configs && <Config
+                    style={
+                        viewThemes ? 
+                        {height: 'calc(100% - 10rem)'} 
+                        : 
+                        {height: 'calc(100% - 30rem)'}
+                    }
+                >
+                    <ArrowButton
+                        
+                        onClick={toggleViewConfigs}
+                    >
+                        <RiArrowRightSLine/>
+                    </ArrowButton>
+                    <ButtonTheme
+                        onClick={toggleViewThemes}
+                    >
+                        Themes
+                    </ButtonTheme>
+                    <Themes style=
+                        {!viewThemes 
+                            ? 
+                            {
+                                height: '0',
+                                opacity: "0",
+                                right: '1000',
+                                zIndex: -1,
+                            } 
+                            : 
+                            {
+                                opacity: "100%",
+                                position: "relative",
+                                height: '20rem',
+                            }
+                    }>
+                            <p>Dark</p>
+                            <Switch 
+                                checked={dark}
+                                onChange = {setTheme}
+                                width={60}
+                                height={20}
+                                uncheckedIcon={false}
+                                checkedIcon={false}
+                                handleDiameter={30}
+                                onColor={
+                                    lighten(0.5, colors.secondary)
+                                }
 
+                                offColor={
+                                    shade(0.2,colors.exitButtonFeature)
+                                }
+                            />
+                            <p>Light</p>
+                            <Switch 
+                                checked={light}
+                                onChange = {setTheme}
+                                width={60}
+                                height={20}
+                                uncheckedIcon={false}
+                                checkedIcon={false}
+                                handleDiameter={30}
+                                onColor={
+                                    lighten(0.1, colors.secondary)
+                                }
+
+                                offColor={
+                                    shade(0.2,colors.exitButtonFeature)
+                                }
+                            />
+                    </Themes>
+
+                    <ButtonExit
+                        style={
+                            !viewThemes
+                            ?
+                            {top: '-5rem'}
+                            :
+                            {top: '0'}
+                        }
+                    >Sair</ButtonExit>
+                </Config>
+                }
                 <LogoContainer>
 
                     <div>

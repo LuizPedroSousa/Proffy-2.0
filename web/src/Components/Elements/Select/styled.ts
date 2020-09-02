@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const SelectContainer = styled.div`
     position: relative;
     label{
-        color: var(--color-text-in-primary);
+         color: ${props => props.theme.colors.textInPrimary};
         font: 400 1.4rem Poppins;
     }
 
@@ -17,12 +17,12 @@ export const SelectContainer = styled.div`
         border-radius: 0.8rem;
         height: 5.6rem;
         width: 100%;
-        border: 1px solid var(--color-input-background);
+        border: 1px solid ${props => props.theme.colors.inputBackground};
         outline: 0;
-        background-color: var(--color-box-footer);
+        background-color: ${props => props.theme.colors.boxFooter};
         font: 400 1.6rem Poppins;
         padding: 0 1.6rem;
-        color: var(--color-text-in-white-select);
+        color: ${props => props.theme.colors.textBase};
     }
     
 
@@ -30,7 +30,7 @@ export const SelectContainer = styled.div`
         content: "";
         width: calc(100% - 3.2rem);
         height: 2px;
-        background-color: var(--color-primary-darker);
+        background-color: ${props => props.theme.colors.primaryDarker};
         position: absolute;
         bottom: 0;
         left: 1.6rem;

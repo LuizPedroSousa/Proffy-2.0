@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
     Fieldset,
@@ -11,14 +11,12 @@ interface FormUserProps {
     classes?: string;
 }
 
-const FieldsetUser: React.FunctionComponent<FormUserProps> = ({ title, children, complement, classes }) => {
+const FieldsetUser: React.FunctionComponent<FormUserProps> = ({ title, children, complement}) => {
+
     return (
-        <Fieldset className={`${classes}`}>
+        <Fieldset>
             <Legend>
                 {title}
-                <p>
-                    {complement}
-                </p>
             </Legend>
             {children}
         </Fieldset>

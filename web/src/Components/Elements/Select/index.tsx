@@ -16,10 +16,11 @@ const Select: React.FunctionComponent<SelectProps> = ({ name, label, padrao, opt
     return (
         <SelectContainer className="select-block">
             <label htmlFor={name}>{label}</label>
-            <select id={name}>
-                <option value="" disabled>{padrao}</option>
+            <select id={name} {...rest}>
+                <option value="" disabled hidden>{padrao}</option>
+
                 {options.map(options => {
-                    return <option value={options.value}>{options.label}</option>
+                    return <option key={options.value} value={options.value}>{options.label}</option>
                 })}
             </select>
         </SelectContainer>

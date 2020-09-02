@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const TeacherListContainer = styled.div`
     width: 100vw;
     height: 100vh;
-
     .childrens,
     .content div:nth-child(1) h2{
         @media(min-width: 1120px){
@@ -72,12 +71,12 @@ export const DescriptionContent = styled.div`
 `;
 
 export const Filter = styled.button`
-    background-color: var(--color-button-feature);
+    background-color: ${props => props.theme.colors.buttonFeature};
     border: 0;
     border-radius: 3.8rem;
     width: 5.4rem;
     height: 5.4rem;
-    color: var(--color-button-text);
+    color: ${props => props.theme.colors.buttonText};
     font-size: 2rem;
     display: flex;
     align-items: center;
@@ -86,17 +85,17 @@ export const Filter = styled.button`
     transition: background-color 0.2s;
     cursor: pointer;
     :hover{
-        background-color: var(--color-button-feature-darker);
+        background-color: ${props => props.theme.colors.buttonFeatureDarker};
     }
 `;
 
 export const NoneFilter = styled.button`
-    background-color: var(--color-exit-button-feature);
+    background-color: ${props => props.theme.colors.exitButtonFeature};
     border: 0;
     border-radius: 3.8rem;
     width: 5.4rem;
     height: 5.4rem;
-    color: var(--color-button-text);
+    color: ${props => props.theme.colors.buttonText};
     font-size: 2rem;
     display: flex;
     align-items: center;
@@ -105,7 +104,7 @@ export const NoneFilter = styled.button`
     transition: background-color 0.2s;
     cursor: pointer;
     :hover{
-        background-color: var(--color-exit-button-feature-darker);
+        background-color: ${props => props.theme.colors.exitButtonFeatureDarker};
     }
 `;
 
@@ -121,14 +120,14 @@ export const Form = styled.form`
         border-radius: 3rem;
         margin: 0 auto;
         margin-top: 2rem;
-        color: var(--color-button-text);
+        color: ${props => props.theme.colors.buttonText};
         font-size: 2rem;
         outline: 0;
         cursor: pointer;
-        background-color: var(--color-primary-lighter);
+        background-color: ${props => props.theme.colors.primaryLighter};
         transition: background-color 0.2s;
         :hover{
-            background-color: var(--color-primary-light);
+            background-color: ${props => props.theme.colors.primaryLight};
         }
         @media(min-width: 1120px){
             margin: 0;

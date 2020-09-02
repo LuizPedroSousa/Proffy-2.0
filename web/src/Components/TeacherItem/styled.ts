@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const TeacherItemContainer = styled.div`
-    background-color: var(--color-box-base);
+    background-color: ${props => props.theme.colors.boxBase};
     overflow: hidden;
     margin: 2.6rem 0;
     border-radius: 0.8rem;
-    border: 1px solid var(--color-line-in-white)
+    border: 1px solid ${props => props.theme.colors.lineInWhite};
 `;
 
 export const Header = styled.header`
@@ -23,7 +23,7 @@ export const Header = styled.header`
 
     strong{
         font: 700 2.4rem Archivo;
-        color: var(--color-text-title);
+        color: ${props => props.theme.colors.textTitle};
     }
 
     @media(min-width: 1120px){
@@ -66,19 +66,19 @@ export const Childrens = styled.div`
 `;
 
 export const Footer = styled.footer`
-    background-color: var(--color-box-footer);
+    background-color: ${props => props.theme.colors.boxFooter};
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     margin-top: 2.5rem;
-    box-shadow: 0 -1px var(--color-line-in-white);
+    box-shadow: 0 -1px  ${props => props.theme.colors.lineInWhite};
 
     a {
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--color-secondary);
+        background-color: ${props => props.theme.colors.secondary};
         width: 100%;
         max-width: 25rem;
         height: 5.2rem;
@@ -87,19 +87,19 @@ export const Footer = styled.footer`
         margin: 1.6rem;
         transition: background-color 0.2s;
         :hover{
-            background-color: var(--color-secondary-dark);
+            background-color: ${props => props.theme.colors.secondaryDark};
         }
     }
 
     span{
         margin-right: 1rem;
-        color: var(--color-button-text);
+        color: ${props => props.theme.colors.buttonText};
         font-size: 2.8rem;
     }
 
     a p {
         font-size: 600 1.6rem Archivo;
-        color: var(--color-button-text);
+        color:  ${props => props.theme.colors.buttonText};
     }
 
     @media(min-width: 1120px){
@@ -120,13 +120,13 @@ export const TextContent = styled.div`
     margin-top: 1.6rem;
 
     p{
-        color: var(--color-text-complement);
+        color: ${props => props.theme.colors.textComplement};
         font-size: 1.4rem;
         margin-right: 1rem;
     }
     strong{
         font: 700 2rem Archivo;
-        color: var(--color-primary);
+        color: ${props => props.theme.colors.primary};
     }
 
     @media(min-width: 1120px){

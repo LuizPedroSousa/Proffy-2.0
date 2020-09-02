@@ -11,24 +11,24 @@ export const TextAreaContainer = styled.div`
 
     div label{
         font: 400 1.4rem Poppins;
-        color: var(--color-text-complement);
+        color: ${props => props.theme.colors.textComplement};
         margin-right: 1rem;
     }
 
     div p{
         font: 400 1.2rem Poppins;
-        color: var(--color-input-text);
+        color: ${props => props.theme.colors.inputText};
         margin-top: 0.2rem;
     }
 
     textarea{
-        background-color: var(--color-box-footer);
+        background-color: ${props => props.theme.colors.boxFooter};
         border-radius: 0.8rem;
-        border: 1px solid var(--color-line-in-white);
+        border: 1px solid ${props => props.theme.colors.lineInWhite};
         outline: 0;
         resize: vertical;
         width: 100%;
-        color: var(--color-primary);
+        color: ${props => props.theme.colors.primary};
         height: 16rem;
         padding: 1rem;
     }
@@ -36,7 +36,7 @@ export const TextAreaContainer = styled.div`
         content: "";
         width: calc(100% - 10rem);
         height: 0.2rem;
-        background-color: var(--color-primary);
+        background-color: ${props => props.theme.colors.primary};
         margin: 0 auto;
         position: absolute;
         bottom: 92rem;
