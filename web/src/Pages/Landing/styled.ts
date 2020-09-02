@@ -1,6 +1,16 @@
 import styled, { keyframes } from 'styled-components';
 import { shade, lighten } from 'polished';
 
+const rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+`;
+
 export const Container = styled.div`
     width: 100vw;
     height: 100vh;
@@ -16,7 +26,6 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-
     a:nth-child(1){
         display: flex;
         justify-content: center;
@@ -55,6 +64,7 @@ export const HeaderContainer = styled.header`
         :hover{
             background-color: ${props => props.theme.colors.primaryDarker};
             color: ${props => props.theme.colors.lineInWhite};
+            animation: ${rotate} 2s linear infinite;
         }
     }
 

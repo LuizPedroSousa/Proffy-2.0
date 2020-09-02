@@ -119,7 +119,10 @@ export const LastLegend = styled(Legend)`
     justify-content: space-between;
     align-content: center;
     p{
-        color: ${props => props.theme.colors.primary};
+        color: ${props => 
+            props.theme.title == 'light' ? props.theme.colors.primary
+            : props.theme.colors.inputText
+        };
         margin-top: 0.5rem;
         font: 600 1.6rem Archivo;
         cursor: pointer;

@@ -28,7 +28,11 @@ export const InputContainer = styled.div`
         background-color: ${props => props.theme.colors.boxFooter};
         font: 400 1.6rem Poppins;
         padding: 0 1.6rem;
-        color: ${props => props.theme.colors.textBase};
+        color: ${props =>
+            props.theme.title == 'light'
+            ? props.theme.colors.textBase
+            : props.theme.colors.inputText
+        };
     }
 
     :focus-within::after{

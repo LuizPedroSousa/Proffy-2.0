@@ -17,7 +17,7 @@ export default{
         textBase: '#6A6180',
         lineInWhite: '#E6E6F0',
         inputBackground: '#e9e9f0',
-        inputText: '#8257E5',
+        inputText: '#C1BCCC',
         buttonText: '#FFFFFF',
         boxBase: '#FFFFFF',
         boxFooter: '#FAFAFC',
