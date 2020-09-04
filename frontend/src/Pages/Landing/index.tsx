@@ -117,7 +117,7 @@ function Landing() {
                         : 
                         {
                             height: 'calc(100% - 30rem)',
-                            transition: '1.5s'
+                            transition: '1s'
                         }
                     }
                 >
