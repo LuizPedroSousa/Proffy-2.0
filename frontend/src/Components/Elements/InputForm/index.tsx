@@ -1,40 +1,27 @@
-import React, { HtmlHTMLAttributes, useState } from 'react';
+import React, { InputHTMLAttributes, useState } from 'react';
 
-import {InputFormContainer} from './styled';
+import { InputFormContainer } from './styled';
 
-interface InputFormProps extends HtmlHTMLAttributes<HTMLInputElement> {
+interface InputFormProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
     name: string;
     type: string;
+    styles?: object;
 }
 
-const InputForm: React.FunctionComponent<InputFormProps> = (props, ...rest) => {
-    const [inputChangeLabel, setInputChangeLabel] = useState('');
+const InputForm: React.FunctionComponent<InputFormProps> = ({ label, name, type, children, styles, ...rest }) => {
     return (
         <InputFormContainer className="input-form-block">
-            <label 
-                htmlFor={props.name}
-                style={
-                    inputChangeLabel != ""
-                        ? 
-                    {
-                        top: "1.2rem",
-                        fontSize: "1.2rem"
-                        
-                    } 
-                        : 
-                    {
-                        top: "2rem",
-                    }
-                }
-            >{props.label}</label>
+            <label
+                htmlFor={name}
+                style={styles}
+            >{label}</label>
             <input
-                type={props.type}
-                name={props.name}
+                type={type}
+                name={name}
                 {...rest}
-                onChange={e => setInputChangeLabel(e.target.value)}
             />
-            {props.children}
+            {children}
         </InputFormContainer>
     );
 }
