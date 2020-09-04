@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 
 import Proffy from './../../Components/Login/Proffy/index';
 import Form from './../../Components/Login/Form/index';
 import InputForm from './../../Components/Elements/InputForm/index';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
+import api from './../../Services/api';
 import {
     LoginContainer,
     OptionsLogin,
@@ -17,6 +18,11 @@ import {
 function Login() {
     const [checkbox, setCheckbox] = useState(false);
     const [viewPassword, setViewPasssword] = useState(false);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const history = useHistory();
     function toggleCheckboxRemember() {
         if (!checkbox) {
             return setCheckbox(true);
@@ -32,6 +38,21 @@ function Login() {
             return setViewPasssword(false);
         }
     }
+
+    const login = (e: FormEvent) => {
+        e.preventDefault();
+        api.post('/users/auth', {
+            email,
+            password,
+        })
+        .then(() => {
+            history.push('/');
+        })
+        .catch(err => {
+            window.alert('senha ou email invalidos');
+            history.push('/login')
+        });
+    }
     return (
         <LoginContainer>
             <Proffy />
@@ -39,16 +60,45 @@ function Login() {
                 <Form
                     title="Fazer Login"
                     buttonName="Entrar"
+                    onSubmit={login}
                 >
                     <InputForm
                         label="Email"
                         name="email"
                         type="Email"
+                        onChange={e => setEmail(e.target.value)}
+                        styles={
+                            email != ""
+                                ?
+                                {
+                                    top: "1.2rem",
+                                    fontSize: "1.2rem"
+
+                                }
+                                :
+                                {
+                                    top: "2rem",
+                                }
+                        }
                     />
                     <InputForm
                         label="Senha"
                         name="password"
                         type={!viewPassword ? "password" : "text"}
+                        onChange={e => setPassword(e.target.value)}
+                        styles={
+                            password != ""
+                                ?
+                                {
+                                    top: "1.2rem",
+                                    fontSize: "1.2rem"
+
+                                }
+                                :
+                                {
+                                    top: "2rem",
+                                }
+                        }
                     >
                         {!viewPassword ?
                             <ViewPasswordPrimary onClick={toggleViewPassword}>

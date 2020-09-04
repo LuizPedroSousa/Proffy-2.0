@@ -14,7 +14,7 @@ interface FormProps extends FormHTMLAttributes<HTMLFormElement> {
 const Form: React.FunctionComponent<FormProps> = ({ children, title, buttonName, description, ...rest }) => {
     return (
         <FormContainer className="form-container">
-            <Forms className="form"{...rest}>
+            <Forms className="form" {...rest}>
                 <strong>{title}</strong>
                 <p>{description}</p>
                 {children}

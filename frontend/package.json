@@ -43,9 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/react-icons": "^3.0.0",
-    "@types/react-router-dom": "^5.1.5",
-    "axios": "^0.20.0"
+    "@types/react-router-dom": "^5.1.5"
   }
 }
