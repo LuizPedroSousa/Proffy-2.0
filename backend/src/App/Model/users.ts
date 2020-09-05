@@ -1,7 +1,7 @@
-import mongoose from '../Database/connection';
+import mongoose from '../../Database/connection';
 import bcrypt from 'bcryptjs';
 
-export interface IUser extends mongoose.Document{
+export interface IUser extends mongoose.Document {
     password: string,
 }
 
@@ -29,13 +29,23 @@ const userSchema = new mongoose.Schema({
         select: false,
     },
 
+    passwordResetToken: {
+        type: String,
+        select: false,
+    },
+
+    passwordResetExpires: {
+        type: Date,
+        select: false,
+    },
+
     createdAt: {
         type: Date,
         default: Date.now,
     }
 });
 
-userSchema.pre<IUser>('save', async function(next){
+userSchema.pre<IUser>('save', async function (next) {
     const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
 
