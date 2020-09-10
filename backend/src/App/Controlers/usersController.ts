@@ -13,7 +13,6 @@ function generateToken(params: object) {
 }
 
 const now = new Date();
-
 export default class UsersController {
     async index(req: Request, res: Response) {
         try {
@@ -24,13 +23,16 @@ export default class UsersController {
                 });
             }
 
-            if(!user.id){
+            if (!user.id) {
                 return res.status(400).json({
                     error: 'User Id not found',
                 });
             }
 
-            return res.status(200).send({ ok: true, user });
+            return res.status(200).send({
+                ok: true,
+                user,
+            });
         } catch (err) {
             return res.status(400).json({
                 error: 'Failed to find user',
