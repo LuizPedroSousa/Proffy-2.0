@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, forwardRef } from 'react';
 
 import {
     InputContainer
@@ -11,7 +11,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 
-const Input: React.FunctionComponent<InputProps> = ({ name, label, children, ...rest }) => {
+const Input: React.RefForwardingComponent<HTMLInputElement,InputProps> = ({ name, label, children, ...rest }, ref) => {
     return (
         <InputContainer className="input-block">
             <label htmlFor={name}>{label}</label>
@@ -19,10 +19,11 @@ const Input: React.FunctionComponent<InputProps> = ({ name, label, children, ...
                 type="text"
                 id="name"
                 {...rest}
+                ref={ref}
             />
             {children}
         </InputContainer>
     );
 }
 
-export default Input;
+export default forwardRef(Input);

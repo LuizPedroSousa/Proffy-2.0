@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect } from 'react';
 
 import {
     TeacherFormContainer,
@@ -19,6 +19,7 @@ import Fieldset from '../../Components/Elements/Fieldset';
 import Input from './../../Components/Elements/Input/index';
 import TextArea from './../../Components/Elements/TextArea/index';
 import Select from './../../Components/Elements/Select/index';
+import api from './../../Services/api';
 
 export default function TeacherForm() {
     const [scheduleItem, SetScheduleItem] = useState([
@@ -30,6 +31,7 @@ export default function TeacherForm() {
     const [subject, setSubject] = useState('');
     const [price, setPrice] = useState('');
 
+    const [name, setName] = useState('');
     function addNewScheduleItem() {
         return SetScheduleItem([
             ...scheduleItem,
@@ -58,6 +60,20 @@ export default function TeacherForm() {
             scheduleItem,
         })
     }
+
+    async function find() {
+        const users = await api.get('/users/find', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+
+        return setName(users.data.user.name);
+    }
+
+    useEffect(() => {
+        find();
+    }, []);
     return (
         <TeacherFormContainer>
             <PageHeader
@@ -83,7 +99,7 @@ export default function TeacherForm() {
                                     src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
                                     alt="Avatar"
                                 />
-                                <strong>Luiz Pedro</strong>
+                                <strong>{name}</strong>
                             </div>
                             <Input
                                 name="whatsapp"

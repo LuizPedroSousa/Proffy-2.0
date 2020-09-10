@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useEffect, useRef } from 'react';
 
 import PageHeader from './../../Components/PageHeader/index';
 import backgroundImage from '../../Assets/Images/background-perfil.svg';
@@ -9,6 +9,7 @@ import TextArea from './../../Components/Elements/TextArea/index';
 import Select from '../../Components/Elements/Select/index';
 import Footer from '../../Components/Elements/Footer/index';
 
+import api from './../../Services/api';
 import {
     PerfilContainer,
     UserContent,
@@ -22,21 +23,28 @@ import {
 
 export default function PerfilUser() {
 
-    const [name, setName] = useState('');
-    const [surName, setSurName] = useState('');
+    const name = useRef<HTMLInputElement>(null);
+    const surName = useRef<HTMLInputElement>(null);
 
-    const [email, setEmail] = useState('');
-    const [whatsapp, setWhatsapp] = useState('');
+    const email = useRef<HTMLInputElement>(null);
+    const whatsapp = useRef<HTMLInputElement>(null);
 
-    const [bio, setBio] = useState('');
+    const bio = useRef<HTMLTextAreaElement>(null);
 
-    const [subject, setSubject] = useState('');
-    const [price, setPrice] = useState('');
+    const subject = useRef<HTMLSelectElement>(null);
+    const price = useRef<HTMLInputElement>(null);
+
+    const [namePlace, setNamePlace] = useState('');
+    const [surNamePlace, setSurNamePlace] = useState('');
+    const [emailPlace, setEmailPlace] = useState('');
+
 
     const [scheduleItem, setScheduleItem] = useState([
         { week_day: 0, from: '', to: '' }
     ]);
 
+    const [userName, setUserName] = useState('');
+    const [userSubject, setUserSubject] = useState('');
     function addNewScheduleItem() {
         setScheduleItem([
             ...scheduleItem,
@@ -48,18 +56,25 @@ export default function PerfilUser() {
 
     }
 
+    async function find() {
+        const users = await api.get('/users/find', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        
+        setNamePlace(users.data.user.name);
+        setSurNamePlace(users.data.user.surname);
+        setEmailPlace(users.data.user.email);
+        return setUserName(users.data.user.name);
+    }
+
+    useEffect(() => {
+        find();
+    }, [])
+
     function saveData(e: FormEvent) {
         e.preventDefault();
-        return console.log({
-            name,
-            surName,
-            email,
-            whatsapp,
-            bio,
-            subject,
-            price,
-            scheduleItem,
-        })
     }
     return (
         <PerfilContainer>
@@ -76,9 +91,15 @@ export default function PerfilUser() {
                         <i className="fas fa-camera"></i>
                     </span>
                     <strong>
-                        Luiz Pedro
-                        </strong>
-                    <p>Programação</p>
+                        {userName}
+                    </strong>
+                    {
+                        userSubject == ''
+                            ?
+                            <p>Aluno</p>
+                            :
+                            <p>userSubject</p>
+                    }
                 </UserContent>
             </PageHeader>
             <section>
@@ -91,14 +112,14 @@ export default function PerfilUser() {
                                 name="name"
                                 label="Nome"
                                 type="text"
-                                value={name}
-                                onChange={e => setName(e.target.value)}
+                                ref={name}
+                                placeholder={namePlace}
                             />
                             <Input
                                 name="surname"
                                 label="Sobrenome"
-                                value={surName}
-                                onChange={e => setSurName(e.target.value)}
+                                placeholder={surNamePlace}
+                                ref={surName}
                             />
                         </GridContainer1>
                         <GridContainer2>
@@ -106,23 +127,21 @@ export default function PerfilUser() {
                                 name="email"
                                 type="email"
                                 label="E-mail"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
+                                placeholder={emailPlace}
+                                ref={email}
                             />
                             <Input
                                 name="whatsapp"
                                 type="number"
                                 label="Whatsapp"
-                                value={whatsapp}
-                                onChange={e => setWhatsapp(e.target.value)}
+                                ref={whatsapp}
                             />
                         </GridContainer2>
                         <TextArea
                             name="bio"
                             label="Biográfia"
                             description="(Máximo de 300 caracteres)"
-                            value={bio}
-                            onChange={e => setBio(e.target.value)}
+                            ref={bio}
                         />
                     </Fieldset>
                     <Fieldset
@@ -144,15 +163,13 @@ export default function PerfilUser() {
                                     { value: "Biologia", label: "Biologia" },
                                     { value: "Quimica", label: "Quimica" },
                                 ]}
-                                value={subject}
-                                onChange={e => setSubject(e.target.value)}
+                                ref={subject}
                             />
                             <Input
                                 name="price"
                                 type="number"
                                 label="Custo da sua hora por aula"
-                                value={price}
-                                onChange={e => setPrice(e.target.value)}
+                                ref={price}
                             />
                         </GridContainer3>
                     </Fieldset>
@@ -170,6 +187,7 @@ export default function PerfilUser() {
                                         name="week_day"
                                         padrao="Selecione um dia"
                                         label="Dia da semana"
+                                        key={schedule.week_day}
                                         options={[
                                             { value: "0", label: "Domingo" },
                                             { value: "1", label: "Segunda-feira" },

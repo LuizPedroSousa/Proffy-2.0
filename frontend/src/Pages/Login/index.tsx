@@ -45,13 +45,14 @@ function Login() {
             email,
             password,
         })
-        .then(() => {
-            history.push('/');
-        })
-        .catch(err => {
-            window.alert('senha ou email invalidos');
-            history.push('/login')
-        });
+            .then((res) => {
+                localStorage.setItem('token', res.data.token);
+                history.push('/');
+            })
+            .catch(err => {
+                window.alert('senha ou email invalidos');
+                history.push('/login')
+            });
     }
     return (
         <LoginContainer>

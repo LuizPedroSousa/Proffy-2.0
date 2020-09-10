@@ -26,6 +26,7 @@ import {
 } from './styled';
 import { Link } from 'react-router-dom';
 import { config } from 'process';
+import api from './../../Services/api';
 
 
 function Landing() {
@@ -45,10 +46,23 @@ function Landing() {
         setDark(theme.title == 'dark' ? true : false);
     }
 
+    const [name, setName] = useState('');
+
+    async function find(){
+        const users = await api.get('/users/find', {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        });
+        console.log(users);
+        return setName(users.data.user.name);
+    }
+
     useEffect(() => {
         toggleDark();
         toggleLight();
-    });
+        find();
+    }, []);
 
     const toggleViewThemes = () => {
         setViewThemes(viewThemes == false ? true : false);
@@ -72,6 +86,7 @@ function Landing() {
         opacity: '0%',
         zIndex: 1,
     }
+
     return (
         <Container>
             <PageLandingContent>
@@ -82,7 +97,7 @@ function Landing() {
                             src="https://pbs.twimg.com/profile_images/1142473888733061122/PkczdiXG_400x400.jpg"
                             alt=""
                         />
-                        <p>Luiz Pedro</p>
+                        <p>{name}</p>
                     </Link>
                     <button
                         className="buttonPower"
