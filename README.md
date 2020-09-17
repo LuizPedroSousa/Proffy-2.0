@@ -25,4 +25,5 @@
 </h1>
 
 - ReactJs
+- Styled Components
 - MongoDB
