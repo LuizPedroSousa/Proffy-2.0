@@ -12,7 +12,7 @@
 <h2 align="center">Preview</h2>
 <br>
 <p align="left">
-    <p>Web</p>
+    <h2>Web</h2>
     <br>
     <img 
         src="./frontend/src/Assets/.GitHub/proffy.gif"
