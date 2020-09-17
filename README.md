@@ -9,7 +9,6 @@
 </p>
 
 <br>
-<h2 align="center">Preview</h2>
 <br>
 <p align="left">
     <h2>Web</h2>
