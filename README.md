@@ -8,11 +8,14 @@
     Project designed to connect teachers with students.
 </p>
 
-<br>
-<br>
+</br>
+
+
+## Overview
+</br>
+
+**Web**
 <p align="left">
-    <h2>Web</h2>
-    <br>
     <img 
         src="./frontend/src/Assets/.GitHub/proffy.gif"
     />
