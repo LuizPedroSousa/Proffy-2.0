@@ -18,6 +18,19 @@
     />
 </p>
 
+</br>
+
+## Get Started
+
+**Clone**
+- `cd desktop` to enter in desktop
+- `git clone https://github.com/LuizPedroSousa/Proffy-2.0.git` to clone this repository;
+
+**Installation**
+- `yarn or npm install` to install all packages
+
+**Usage**
+- `yarn on npm start` to init this & apreciated 😸
 
 <h1>
     💻 Technologies
