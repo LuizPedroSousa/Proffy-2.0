@@ -30,7 +30,7 @@
 - `yarn or npm install` to install all packages
 
 **Usage**
-- `yarn on npm start` to init this & apreciated 😸
+- `yarn or npm start` to init this project & apreciated 😸
 
 <h1>
     💻 Technologies
