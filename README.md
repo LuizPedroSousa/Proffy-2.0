@@ -24,14 +24,17 @@
 </h1>
 
 **Frontend**
+- Typescript
 - ReactJs
 - Styled Components
 
 **Backend**
+- Typescript
 - Express
 - Nodemailer
 - MongoDB
 - Mongoose
 
 **Mobal**
+- Typescript
 - React Native
