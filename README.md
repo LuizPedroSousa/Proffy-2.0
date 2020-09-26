@@ -23,6 +23,15 @@
     💻 Technologies
 </h1>
 
+**Frontend**
 - ReactJs
 - Styled Components
+
+**Backend**
+- Express
+- Nodemailer
 - MongoDB
+- Mongoose
+
+**Mobal**
+- React Native
