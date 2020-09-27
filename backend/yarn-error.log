@@ -1,11 +1,11 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add email-templates-handlebars @types/email-templates-handlebars -D
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add sequelize-cli @types/sequelize-cli -D
 
 PATH: 
-  C:\Users\luizp\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\luizp\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\MongoDB\Server\4.4\bin;C:\Users\luizp\AppData\Local\Microsoft\WindowsApps;C:\Users\luizp\AppData\Roaming\npm;C:\Users\luizp\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\luizp\AppData\Local\Yarn\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+  C:\Users\Luiz Pedro\bin;C:\Program Files\git\usr\local\bin;C:\Program Files\git\usr\bin;C:\Program Files\git\usr\bin;C:\Program Files\git\opt\bin;C:\Python38\Scripts;C:\Python38;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Luiz Pedro\AppData\Local\Microsoft\WindowsApps;C:\Users\LuizPedro\AppData\Roaming\npm;C:\Users\Luiz Pedro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Luiz Pedro\AppData\Local\Yarn\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\git\usr\bin\vendor_perl;C:\Program Files\git\usr\bin\core_perl
 
 Yarn version: 
-  1.22.4
+  1.22.5
 
 Node version: 
   12.18.3
@@ -14,13 +14,13 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/email-templates-handlebars: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66096:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
+  Error: https://registry.yarnpkg.com/@types%2fsequelize-cli: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66097:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140749:22)
       at Request.emit (events.js:315:20)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141720:10)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141721:10)
       at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141642:12)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141643:12)
       at Object.onceWrapper (events.js:421:28)
       at IncomingMessage.emit (events.js:327:22)
       at endReadableNT (_stream_readable.js:1220:12)
