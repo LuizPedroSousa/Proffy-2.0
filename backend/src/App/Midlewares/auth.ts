@@ -1,11 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import authConfig from '../../Configs/auth.json';
 
-interface userProps {
-    userId: string,
+interface RequestProps extends Request {
+    userId: string;
 }
-export default (req: Request, res: Response, next: NextFunction) => {
+export default (req: RequestProps, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization;
 
     if (!authHeader) {
@@ -30,7 +29,7 @@ export default (req: Request, res: Response, next: NextFunction) => {
         });
     }
 
-    jwt.verify(token, authConfig.secret, (err: any, decoded: any) => {
+    jwt.verify(token, JSON.stringify(process.env.SECRET_KEY), (err: any, decoded: any) => {
         if (err) {
             return res.status(401).json({
                 error: 'Invalid Token'

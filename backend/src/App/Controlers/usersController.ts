@@ -1,20 +1,18 @@
 import { Request, Response } from 'express';
-import Users, { IUser } from '../Model/users';
+import Users from '../Model/users';
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
-import authConfig from '../../Configs/auth.json';
-
 import mailer from '../../Modules/mailer';
-function generateToken(params: object) {
-    return jwt.sign(params, authConfig.secret, {
-        expiresIn: 86400,
-    });
+import generateToken from '../../Utils/generateToken';
+
+
+interface indexRequest extends Request {
+    userId: number;
 }
 
-const now = new Date();
+const now = new Date;
 export default class UsersController {
-    async index(req: Request, res: Response) {
+    async index(req: indexRequest, res: Response) {
         try {
             const user = await Users.findOne({ _id: req.userId });
             if (!user) {
@@ -64,7 +62,7 @@ export default class UsersController {
 
             mailer.sendMail({
                 to: email,
-                from: 'luizpedrosousa64@gmail.com',
+                from: process.env.NODEMAILER_USER,
                 template: 'auth/forgot_password',
                 context: { token }
             }, (err: any) => {
@@ -79,7 +77,7 @@ export default class UsersController {
             });
         } catch (err) {
             return res.status(401).json({
-                error: 'Failed on forgot password'
+                error: `Failed on forgot password ${err}`
             });
         }
     }
@@ -164,20 +162,31 @@ export default class UsersController {
         });
 
         try {
-            if (await Users.findOne({ email })) {
+            if (await Users.findOne({ email }))
                 return res.status(400).json({
                     error: 'Email existente'
                 });
-            } else {
-                await users.save();
-                console.log('Dados enviados com sucesso');
-                users.password = undefined;
-                return res.status(201).send({
-                    users,
-                    token: generateToken({ id: users.id }),
-                });
-            }
+            await users.save();
+            users.password = undefined;
+            mailer.sendMail({
+                to: email,
+                from: process.env.NODEMAILER_USER,
+                template: 'create/new_user',
+                context: { name },
+            }, (err: any) => {
+                if (err)
+                    return res.status(400).json({
+                        error: `Falha ao enviar email ${err}`,
+                    });
+                else
+                    return res.status(201).send({
+                        status: 'Okay, Email enviado para usuário',
+                        users,
+                        token: generateToken({ id: users.id }),
+                    });
+            });
         } catch (err) {
+            console.log(err);
             return res.status(400).json({
                 error: `Falha ao enviar dados de usuário: ${err}`
             });
